@@ -5,100 +5,77 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
-      content="Oli Medwin CV — education, experience, skills, and certifications."
+      content="Oli Medwin CV — education, experience, and technical focus."
     />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 
     <link rel="stylesheet" href="style.css" />
     <title>Oli Medwin | CV</title>
   </head>
-  <body>
-    <header class="site-header site-header--minimal">
-      <div class="container header-inner header-inner--minimal">
-        <a class="brand" href="index.html">← Back to the story</a>
-        <a class="header-quiet" href="contact.html">Contact</a>
-      </div>
-    </header>
+  <body class="detail-page">
+    <main class="detail-main">
+      <section class="detail-shell" aria-labelledby="cv-title">
+        <div class="detail-top">
+          <a class="back-link" href="index.html#overview">Back to homepage overview section</a>
+          <a class="back-link back-link-subtle" href="index.html">Home</a>
+        </div>
 
-    <main class="site-main">
-      <div class="container">
-        <article class="cv-paper">
+        <p class="detail-kicker">CV</p>
+        <h1 class="detail-title" id="cv-title">Curriculum vitae</h1>
+        <p class="detail-lead">Current education, experience, and technical focus summary.</p>
+
+        <article class="cv-paper detail-cv-paper">
           <div class="cv-header">
-            <h1 class="cv-title">Oli Medwin</h1>
+            <h2 class="cv-title">Oli Medwin</h2>
             <p class="cv-subtitle">
-              Bachelor of Computing &amp; Information Sciences (BCIS) student — cybersecurity &
-              networks
+              Bachelor of Computing and Information Sciences student — cybersecurity and networks
             </p>
-            <div style="margin-top: 0.6rem; display: flex; flex-wrap: wrap; gap: 0.75rem;">
-              <a class="btn btn-accent" href="cv.pdf">Download PDF</a>
-              <a class="btn" href="contact.html">Contact</a>
-            </div>
           </div>
 
           <section class="cv-section" aria-labelledby="edu-title">
-            <h2 id="edu-title">Education</h2>
+            <h3 id="edu-title">Education</h3>
             <div class="cv-row">
-              <div class="cv-item-title">
-                Bachelor of Computing &amp; Information Sciences (BCIS), AUT
-              </div>
-              <div class="cv-item-subtitle">Majoring in Cybersecurity &amp; Networks (in progress)</div>
+              <div class="cv-item-title">Bachelor of Computing and Information Sciences, AUT</div>
+              <div class="cv-item-subtitle">Majoring in Cybersecurity and Networks (in progress)</div>
             </div>
           </section>
 
           <section class="cv-section" aria-labelledby="exp-title">
-            <h2 id="exp-title">Experience</h2>
+            <h3 id="exp-title">Experience</h3>
             <div class="cv-row">
               <div class="cv-item-title">Bartender</div>
-              <div class="cv-item-subtitle">
-                Hospitality industry, New Zealand (placeholder dates)
-              </div>
+              <div class="cv-item-subtitle">Hospitality industry, New Zealand</div>
             </div>
           </section>
 
           <section class="cv-section" aria-labelledby="skills-title">
-            <h2 id="skills-title">Skills</h2>
+            <h3 id="skills-title">Technical focus</h3>
             <ul class="cv-list">
-              <li>Networking</li>
-              <li>Linux</li>
-              <li>Self-hosting</li>
-              <li>Caddy</li>
-              <li>Docker</li>
+              <li>Networking and secure access</li>
+              <li>Linux and self-hosted services</li>
+              <li>Docker and reverse proxy tooling</li>
               <li>Cybersecurity fundamentals</li>
-              <li>HTML/CSS/JS</li>
-            </ul>
-          </section>
-
-          <section class="cv-section" aria-labelledby="certs-title">
-            <h2 id="certs-title">Certifications</h2>
-            <ul class="cv-list">
-              <li>Placeholder certification slot</li>
-              <li>Another placeholder slot</li>
+              <li>HTML, CSS, and JavaScript</li>
             </ul>
           </section>
         </article>
-      </div>
+
+        <div class="page-actions">
+          <a class="btn btn-accent" href="cv.pdf">Download PDF</a>
+          <a class="btn" href="index.html#overview">Back to homepage section</a>
+        </div>
+      </section>
     </main>
 
-    <footer class="site-footer">
+    <footer class="site-footer detail-footer">
       <div class="container">
-        <p class="footer-text footer-links">
-          © <span class="js-year"></span> Oli Medwin ·
-          <a href="index.html">Story</a>
-          ·
-          <a href="cocktails.html">Cocktails</a>
-          ·
-          <a href="projects.html">Projects</a>
-        </p>
+        <p class="footer-text">© <span class="js-year"></span> Oli Medwin. All rights reserved.</p>
       </div>
     </footer>
 
     <script defer src="script.js"></script>
   </body>
 </html>
-

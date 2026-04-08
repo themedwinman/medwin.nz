@@ -5,228 +5,167 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
-      content="Oli Medwin projects — homelab, networking, self-hosted services, and small infrastructure experiments."
+      content="Oli Medwin projects — cybersecurity, networking, and practical homelab infrastructure work."
     />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 
     <link rel="stylesheet" href="style.css" />
     <title>Oli Medwin | Projects</title>
   </head>
-  <body>
-    <header class="site-header site-header--minimal">
-      <div class="container header-inner header-inner--minimal">
-        <a class="brand" href="index.html">← Back to the story</a>
-        <a class="header-quiet" href="contact.html">Contact</a>
-      </div>
-    </header>
+  <body class="detail-page">
+    <main class="detail-main">
+      <section class="detail-shell" aria-labelledby="projects-title">
+        <div class="detail-top">
+          <a class="back-link" href="index.html#builder">Back to homepage projects section</a>
+          <a class="back-link back-link-subtle" href="index.html">Home</a>
+        </div>
 
-    <main class="site-main">
-      <div class="container">
-        <section class="section" aria-labelledby="projects-title">
-          <h1 class="section-title" id="projects-title">Projects / Homelab</h1>
-          <p class="lead">
-            A mix of self-hosted services, networking experiments, and the kind of “small changes”
-            that keep systems running smoothly.
-          </p>
+        <p class="detail-kicker">Projects</p>
+        <h1 class="detail-title" id="projects-title">Homelab and infrastructure projects</h1>
+        <p class="detail-lead">
+          Selected practical work focused on secure access, resilient services, and maintainable operations.
+          Select a project card to open full details.
+        </p>
 
-          <div class="project-grid" style="margin-top: 1.25rem;">
-            <button
-              type="button"
-              class="project-card project-expand"
-              aria-haspopup="dialog"
-              aria-controls="project-modal"
-              aria-label="Open project: monkeserver homelab stack"
-            >
-              <h3>monkeserver homelab stack</h3>
-              <p>
-                A Raspberry Pi running <strong>Jellyfin</strong>, <strong>Sonarr</strong>,
-                <strong>Radarr</strong>, <strong>Caddy</strong>, <strong>Pi-hole</strong>,
-                <strong>Tailscale</strong>, and more on <strong>Ubuntu Server</strong>.
-              </p>
-              <div class="tag-row" aria-label="Project tags">
-                <span class="tag">Networking</span>
-                <span class="tag">Self-hosted</span>
-                <span class="tag">Linux</span>
-                <span class="tag">Media</span>
-              </div>
-              <div class="project-details" hidden>
-                <p>
-                  <strong>Overview (placeholder):</strong> A cozy home media and automation stack designed
-                  to be reliable, secure-by-default, and easy to evolve as I learn.
-                </p>
-                <h4>What it includes</h4>
-                <ul>
-                  <li><strong>Jellyfin</strong>: library hosting + streaming.</li>
-                  <li><strong>Sonarr/Radarr</strong>: automated downloads and organization.</li>
-                  <li><strong>Caddy</strong>: clean HTTPS + reverse proxy.</li>
-                  <li><strong>Pi-hole</strong>: DNS filtering for the home network.</li>
-                  <li><strong>Tailscale</strong>: encrypted access without exposing services publicly.</li>
-                </ul>
-                <h4>Notes (placeholder)</h4>
-                <p>
-                  Add details about storage, updates, backups, monitoring, and how you keep
-                  it stable (and what you learned while building it).
-                </p>
-              </div>
-            </button>
-
-            <button
-              type="button"
-              class="project-card project-expand"
-              aria-haspopup="dialog"
-              aria-controls="project-modal"
-              aria-label="Open project: Pi-hole + Caddy reverse proxy (wildcard HTTPS)"
-            >
-              <h3>Pi-hole + Caddy reverse proxy (wildcard HTTPS)</h3>
-              <p>
-                A tidy setup for DNS filtering and reliable access to internal services — with
-                wildcard HTTPS handled via Caddy.
-              </p>
-              <div class="tag-row" aria-label="Project tags">
-                <span class="tag">Networking</span>
-                <span class="tag">Self-hosted</span>
-                <span class="tag">Caddy</span>
-                <span class="tag">DNS</span>
-              </div>
-              <div class="project-details" hidden>
-                <p>
-                  <strong>Overview (placeholder):</strong> I wanted a simple way to map friendly names to
-                  internal services, while still getting modern TLS and avoiding brittle certificate work.
-                </p>
-                <h4>Key ideas (placeholder)</h4>
-                <ul>
-                  <li><strong>Pi-hole</strong> as a local DNS entry point.</li>
-                  <li><strong>Caddy</strong> for automatic HTTPS and clean routing.</li>
-                  <li><strong>Wildcard TLS</strong> so I can add subdomains without re-issuing certs manually.</li>
-                </ul>
-                <h4>Next steps (placeholder)</h4>
-                <p>
-                  Add what you changed over time (e.g. security hardening, rate limiting, WAF, logging, or
-                  migration strategy).
-                </p>
-              </div>
-            </button>
-
-            <button
-              type="button"
-              class="project-card project-expand"
-              aria-haspopup="dialog"
-              aria-controls="project-modal"
-              aria-label="Open project: Tailscale mesh network"
-            >
-              <h3>Tailscale mesh network</h3>
-              <p>
-                Encrypted connectivity across devices and services — simple wireguard-based access,
-                with an emphasis on keeping configuration understandable.
-              </p>
-              <div class="tag-row" aria-label="Project tags">
-                <span class="tag">Networking</span>
-                <span class="tag">Self-hosted</span>
-                <span class="tag">WireGuard</span>
-              </div>
-              <div class="project-details" hidden>
-                <p>
-                  <strong>Overview (placeholder):</strong> A mesh network that keeps traffic encrypted and
-                  reduces the need for public exposure while still allowing convenient access.
-                </p>
-                <h4>What I focused on (placeholder)</h4>
-                <ul>
-                  <li>Simple device onboarding.</li>
-                  <li>Clear access rules for services.</li>
-                  <li>Keeping naming and “who can talk to what” understandable.</li>
-                </ul>
-                <h4>Lessons (placeholder)</h4>
-                <p>
-                  Add any takeaways about network segmentation, key management, or troubleshooting.
-                </p>
-              </div>
-            </button>
-
-            <button
-              type="button"
-              class="project-card project-expand"
-              aria-haspopup="dialog"
-              aria-controls="project-modal"
-              aria-label="Open project: Future project slot"
-            >
-              <h3>Future project slot</h3>
-              <p>Coming soon. Planning notes are brewing somewhere between backups and patching.</p>
-              <div class="tag-row" aria-label="Project tags">
-                <span class="tag">Linux</span>
-                <span class="tag">Homelab</span>
-              </div>
-              <div class="project-details" hidden>
-                <p>
-                  <strong>Coming soon (placeholder):</strong> This slot is for a future homelab/security project.
-                </p>
-                <h4>Idea (placeholder)</h4>
-                <p>Add your concept here: what you’re building, why it matters, and what “done” looks like.</p>
-              </div>
-            </button>
-
-            <button
-              type="button"
-              class="project-card project-expand"
-              aria-haspopup="dialog"
-              aria-controls="project-modal"
-              aria-label="Open project: Future project slot (placeholder)"
-            >
-              <h3>Future project slot</h3>
-              <p>Coming soon. Another experiment in networking, security, and service reliability.</p>
-              <div class="tag-row" aria-label="Project tags">
-                <span class="tag">Cybersecurity</span>
-                <span class="tag">Networking</span>
-              </div>
-              <div class="project-details" hidden>
-                <p>
-                  <strong>Coming soon (placeholder):</strong> A future project focused on security and network hygiene.
-                </p>
-                <h4>Planned scope (placeholder)</h4>
-                <p>Describe the target architecture and what tooling you’ll use (or learn).</p>
-              </div>
-            </button>
-          </div>
-
-          <div
-            class="modal-overlay"
-            id="project-overlay"
-            aria-hidden="true"
-            aria-label="Project details overlay"
+        <div class="project-grid detail-project-grid">
+          <button
+            type="button"
+            class="project-card project-expand"
+            aria-haspopup="dialog"
+            aria-controls="project-modal"
+            aria-label="Open project details for Monkeserver homelab stack"
           >
-            <div class="project-modal" id="project-modal" role="dialog" aria-modal="true" aria-labelledby="project-modal-title">
-              <div class="project-modal-inner">
-                <div class="project-modal-head">
-                  <h2 id="project-modal-title">Project</h2>
-                  <button type="button" class="btn" id="project-modal-close">Close</button>
-                </div>
-                <div class="project-modal-body" id="project-modal-body"></div>
-              </div>
+            <h3>Monkeserver homelab stack</h3>
+            <p>
+              Raspberry Pi stack running Jellyfin, Sonarr/Radarr, Caddy, Pi-hole, and Tailscale on
+              Ubuntu Server.
+            </p>
+            <div class="tag-row" aria-label="Project tags">
+              <span class="tag">Self-hosted</span>
+              <span class="tag">Linux</span>
+              <span class="tag">Networking</span>
+              <span class="tag">Media</span>
             </div>
-          </div>
-        </section>
-      </div>
+            <div class="project-details" hidden>
+              <p>
+                A home media and infrastructure stack designed for reliability, clear service boundaries,
+                and secure remote access.
+              </p>
+              <h4>Core components</h4>
+              <ul>
+                <li>Jellyfin for media hosting and streaming.</li>
+                <li>Sonarr/Radarr for automated library workflows.</li>
+                <li>Caddy for reverse proxy and HTTPS.</li>
+                <li>Pi-hole for local DNS filtering.</li>
+                <li>Tailscale for encrypted private connectivity.</li>
+              </ul>
+            </div>
+          </button>
+
+          <button
+            type="button"
+            class="project-card project-expand"
+            aria-haspopup="dialog"
+            aria-controls="project-modal"
+            aria-label="Open project details for Pi-hole and Caddy reverse proxy"
+          >
+            <h3>Pi-hole and Caddy reverse proxy</h3>
+            <p>
+              Local DNS control and internal routing with wildcard HTTPS to keep services tidy and easy
+              to scale.
+            </p>
+            <div class="tag-row" aria-label="Project tags">
+              <span class="tag">DNS</span>
+              <span class="tag">Caddy</span>
+              <span class="tag">TLS</span>
+              <span class="tag">Routing</span>
+            </div>
+            <div class="project-details" hidden>
+              <p>
+                Built to map friendly local hostnames to services while maintaining modern TLS and clear
+                service routing.
+              </p>
+              <h4>Highlights</h4>
+              <ul>
+                <li>Pi-hole as the local DNS entry point.</li>
+                <li>Caddy for automated certificates and clean proxy config.</li>
+                <li>Wildcard setup for faster onboarding of new internal services.</li>
+              </ul>
+            </div>
+          </button>
+
+          <button
+            type="button"
+            class="project-card project-expand"
+            aria-haspopup="dialog"
+            aria-controls="project-modal"
+            aria-label="Open project details for Tailscale mesh network"
+          >
+            <h3>Tailscale mesh network</h3>
+            <p>
+              WireGuard-based private access across devices and services, with simple policies and
+              strong defaults.
+            </p>
+            <div class="tag-row" aria-label="Project tags">
+              <span class="tag">WireGuard</span>
+              <span class="tag">Access Control</span>
+              <span class="tag">Security</span>
+            </div>
+            <div class="project-details" hidden>
+              <p>
+                Designed to reduce public exposure while keeping trusted access simple and reliable.
+              </p>
+              <h4>Focus areas</h4>
+              <ul>
+                <li>Straightforward device onboarding and naming.</li>
+                <li>Clear access rules per service.</li>
+                <li>Low-friction troubleshooting and operational clarity.</li>
+              </ul>
+            </div>
+          </button>
+        </div>
+
+        <p class="detail-note">More projects are in progress and documented as they mature.</p>
+
+        <div class="page-actions">
+          <a class="btn" href="index.html#builder">Back to homepage section</a>
+          <a class="btn btn-accent" href="index.html#contact">Contact</a>
+        </div>
+      </section>
     </main>
 
-    <footer class="site-footer">
+    <footer class="site-footer detail-footer">
       <div class="container">
-        <p class="footer-text footer-links">
-          © <span class="js-year"></span> Oli Medwin ·
-          <a href="index.html">Story</a>
-          ·
-          <a href="cocktails.html">Cocktails</a>
-          ·
-          <a href="cv.html">CV</a>
-        </p>
+        <p class="footer-text">© <span class="js-year"></span> Oli Medwin. All rights reserved.</p>
       </div>
     </footer>
+
+    <div
+      class="modal-overlay"
+      id="project-overlay"
+      aria-hidden="true"
+      aria-label="Project details overlay"
+    >
+      <div
+        class="project-modal"
+        id="project-modal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="project-modal-title"
+      >
+        <div class="project-modal-inner">
+          <div class="project-modal-head">
+            <h2 id="project-modal-title">Project</h2>
+            <button type="button" class="btn" id="project-modal-close">Close</button>
+          </div>
+          <div class="project-modal-body" id="project-modal-body"></div>
+        </div>
+      </div>
+    </div>
 
     <script defer src="script.js"></script>
   </body>
 </html>
-

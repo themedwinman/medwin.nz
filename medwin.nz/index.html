@@ -5,174 +5,273 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
-      content="Oli Medwin — bartender, BCIS student in cybersecurity & networks, homelab builder. New Zealand."
+      content="Oli Medwin portfolio: BCIS student focused on cybersecurity, networks, and practical infrastructure projects."
     />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
 
     <link rel="stylesheet" href="style.css" />
-    <title>Oli Medwin</title>
-    <script>
-      document.documentElement.classList.add("js");
-    </script>
+    <title>Oli Medwin | Portfolio</title>
   </head>
-  <body class="page-home">
-    <a class="skip-link" href="#top">Skip to story</a>
+  <body class="story-page">
+    <div class="story-scroll" id="story">
+      <main class="story-main">
+        <section class="chapter chapter-intro" id="intro" aria-labelledby="intro-title">
+          <div class="chapter-inner chapter-home reveal">
+            <p class="chapter-kicker">Personal site</p>
+            <h1 id="intro-title">Hi, I'm Oli.</h1>
+            <p class="home-subtitle">
+              I'm studying cybersecurity and networks at AUT, working in hospitality, and building
+              practical infrastructure projects.
+            </p>
 
-    <header class="site-header site-header--minimal">
-      <div class="container header-inner header-inner--minimal">
-        <a class="brand" href="#top">Oli Medwin</a>
-        <a class="header-quiet" href="contact.html">Contact</a>
+            <p class="home-meta">
+              <span>BCIS student at AUT</span>
+              <span>Part-time hospitality work</span>
+              <span>Auckland, New Zealand</span>
+            </p>
+
+            <div class="chapter-cta" aria-label="Intro quick links">
+              <a class="btn btn-accent" href="#overview">About me</a>
+              <a class="btn" href="#builder">Projects</a>
+              <a class="btn" href="#contact">Contact</a>
+            </div>
+          </div>
+        </section>
+
+        <section class="chapter chapter-overview" id="overview" aria-labelledby="overview-title">
+          <div class="chapter-inner reveal">
+            <p class="chapter-kicker">About</p>
+            <h2 id="overview-title">Quick profile</h2>
+
+            <div class="overview-grid" aria-label="Profile overview cards">
+              <article class="overview-card">
+                <h3>Education</h3>
+                <p>Bachelor of Computing and Information Sciences, AUT.</p>
+                <p>Major in Cybersecurity and Networks.</p>
+              </article>
+
+              <article class="overview-card">
+                <h3>Current work</h3>
+                <p>Hospitality role focused on service, pace, and teamwork.</p>
+              </article>
+
+              <article class="overview-card">
+                <h3>Technical focus</h3>
+                <p>Secure networking, Linux systems, and practical automation.</p>
+              </article>
+            </div>
+
+            <details class="story-expand compact-expand">
+              <summary>More about how I work</summary>
+              <div class="expand-body">
+                <ul class="cv-list">
+                  <li>Calm under pressure and clear in communication.</li>
+                  <li>Service mindset from hospitality experience.</li>
+                  <li>I like simple, reliable systems people can trust.</li>
+                </ul>
+              </div>
+            </details>
+
+            <div class="chapter-cta">
+              <a class="btn btn-accent" href="cv.pdf">Download CV</a>
+              <a class="btn" href="https://www.linkedin.com/in/oli-medwin/" target="_blank" rel="noopener">LinkedIn</a>
+            </div>
+          </div>
+        </section>
+
+        <section class="chapter chapter-builder" id="builder" aria-labelledby="builder-title">
+          <div class="chapter-inner reveal">
+            <p class="chapter-kicker">Projects</p>
+            <h2 id="builder-title">Selected projects</h2>
+            <p class="chapter-lead">
+              A few recent infrastructure and security builds.
+            </p>
+
+            <div class="project-grid story-project-grid">
+              <button
+                type="button"
+                class="project-card project-expand"
+                aria-haspopup="dialog"
+                aria-controls="project-modal"
+                aria-label="Open project details for monkeserver homelab stack"
+              >
+                <h3>Monkeserver homelab stack</h3>
+                <p>
+                  Raspberry Pi stack with media, DNS, secure remote access, and reverse proxy.
+                </p>
+                <div class="tag-row" aria-label="Project tags">
+                  <span class="tag">Self-hosted</span>
+                  <span class="tag">Linux</span>
+                  <span class="tag">Networking</span>
+                </div>
+                <div class="project-details" hidden>
+                  <p>
+                    A home media and infrastructure stack designed for reliability and secure remote access.
+                  </p>
+                  <h4>Core pieces</h4>
+                  <ul>
+                    <li>Jellyfin for streaming and library hosting.</li>
+                    <li>Sonarr/Radarr for automation and organization.</li>
+                    <li>Caddy for reverse proxy and HTTPS.</li>
+                    <li>Pi-hole for local DNS filtering.</li>
+                    <li>Tailscale for encrypted access without public exposure.</li>
+                  </ul>
+                </div>
+              </button>
+
+              <button
+                type="button"
+                class="project-card project-expand"
+                aria-haspopup="dialog"
+                aria-controls="project-modal"
+                aria-label="Open project details for Pi-hole and Caddy reverse proxy"
+              >
+                <h3>Pi-hole + Caddy reverse proxy</h3>
+                <p>
+                  Clean local routing with DNS control and HTTPS for internal services.
+                </p>
+                <div class="tag-row" aria-label="Project tags">
+                  <span class="tag">DNS</span>
+                  <span class="tag">Caddy</span>
+                  <span class="tag">TLS</span>
+                </div>
+                <div class="project-details" hidden>
+                  <p>
+                    Friendly local names plus modern HTTPS, without brittle manual certificate workflows.
+                  </p>
+                  <h4>Highlights</h4>
+                  <ul>
+                    <li>Pi-hole as the local DNS control point.</li>
+                    <li>Caddy for automatic cert handling and proxy routes.</li>
+                    <li>Wildcard setup to speed up new service onboarding.</li>
+                  </ul>
+                </div>
+              </button>
+
+            </div>
+
+            <details class="story-expand compact-expand">
+              <summary>How I approach projects</summary>
+              <div class="expand-body">
+                <ul class="cv-list">
+                  <li>Clear architecture and documentation.</li>
+                  <li>Secure-by-default access patterns.</li>
+                  <li>Recovery paths when things fail.</li>
+                </ul>
+              </div>
+            </details>
+
+            <div class="chapter-cta">
+              <a class="btn" href="projects.html">See full project list</a>
+            </div>
+          </div>
+        </section>
+
+        <section class="chapter chapter-bartender" id="bartender" aria-labelledby="bartender-title">
+          <div class="chapter-inner reveal">
+            <p class="chapter-kicker">Hospitality</p>
+            <h2 id="bartender-title">Craft and service</h2>
+            <p class="chapter-lead">
+              Bartending sharpened consistency, communication, and calm execution under pressure.
+            </p>
+
+            <div class="recipe-grid" aria-label="Cocktail recipes">
+              <article class="recipe-card">
+                <h3>Oli's Feijoa Tom Collins</h3>
+                <p class="recipe-note">Feijoa-forward, bright citrus, NZ gin backbone.</p>
+                <details class="story-expand compact-expand">
+                  <summary>View recipe</summary>
+                  <div class="expand-body">
+                    <h4>Ingredients</h4>
+                    <ul class="recipe-ingredients">
+                      <li>NZ gin</li>
+                      <li>Feijoa puree or cordial</li>
+                      <li>Lemon juice</li>
+                      <li>Sugar syrup</li>
+                      <li>Soda water</li>
+                    </ul>
+                    <h4>Method</h4>
+                    <ol class="recipe-method">
+                      <li>Shake gin, feijoa, lemon, and syrup with ice.</li>
+                      <li>Strain into a tall glass over fresh ice.</li>
+                      <li>Top with soda and stir once.</li>
+                      <li>Garnish and serve.</li>
+                    </ol>
+                  </div>
+                </details>
+              </article>
+            </div>
+
+            <div class="chapter-cta">
+              <a class="btn" href="cocktails.html">See full cocktail page</a>
+            </div>
+          </div>
+        </section>
+
+        <section class="chapter chapter-contact" id="contact" aria-labelledby="contact-title">
+          <div class="chapter-inner reveal">
+            <p class="chapter-kicker">Contact</p>
+            <h2 id="contact-title">Let's connect.</h2>
+            <p class="chapter-lead">
+              Open to internships and graduate opportunities.
+            </p>
+
+            <details class="story-expand compact-expand">
+              <summary>Availability</summary>
+              <div class="expand-body">
+                <p>I can contribute across infrastructure, security, and client-facing communication.</p>
+              </div>
+            </details>
+
+            <div class="contact-actions">
+              <a class="btn btn-accent" href="mailto:hello@medwin.nz">Email Oli</a>
+              <a class="btn" href="https://www.linkedin.com/in/oli-medwin/" target="_blank" rel="noopener">LinkedIn</a>
+              <a class="btn" href="https://github.com/oli-medwin" target="_blank" rel="noopener">GitHub</a>
+            </div>
+
+            <footer class="site-footer story-footer">
+              <p class="footer-text">© <span class="js-year"></span> Oli Medwin. All rights reserved.</p>
+            </footer>
+          </div>
+        </section>
+      </main>
+
+      <div
+        class="modal-overlay"
+        id="project-overlay"
+        aria-hidden="true"
+        aria-label="Project details overlay"
+      >
+        <div
+          class="project-modal"
+          id="project-modal"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="project-modal-title"
+        >
+          <div class="project-modal-inner">
+            <div class="project-modal-head">
+              <h2 id="project-modal-title">Project</h2>
+              <button type="button" class="btn" id="project-modal-close">Close</button>
+            </div>
+            <div class="project-modal-body" id="project-modal-body"></div>
+          </div>
+        </div>
       </div>
-    </header>
+    </div>
 
-    <main id="top" class="site-main story-main">
-      <section
-        class="story-panel story-panel--intro reveal reveal-stagger-1"
-        aria-labelledby="intro-title"
-        data-story-theme="intro"
-      >
-        <div class="story-panel-bg" aria-hidden="true"></div>
-        <div class="container story-panel-inner">
-          <div class="story-content">
-            <p class="story-kicker">New Zealand</p>
-            <h1 id="intro-title" class="story-title">Hi — I’m Oli.</h1>
-            <p class="story-lede">
-              I wear a few hats that don’t always show up in the same sentence: I’m a
-              <strong>bartender</strong>, a <strong>BCIS student</strong> majoring in
-              <strong>cybersecurity and networks</strong>, and someone who spends quiet evenings
-              tinkering with a <strong>homelab</strong> and self-hosted services.
-            </p>
-            <p class="story-body">
-              Scroll for a short tour of how those pieces fit — and where to go for cocktails,
-              projects, or a formal CV.
-            </p>
-            <p class="story-scroll-hint" aria-hidden="true">Scroll</p>
-          </div>
-        </div>
-      </section>
-
-      <section
-        class="story-panel story-panel--bar reveal reveal-stagger-2"
-        aria-labelledby="chapter-bar"
-        data-story-theme="bar"
-      >
-        <div class="story-panel-bg" aria-hidden="true"></div>
-        <div class="container story-panel-inner">
-          <div class="story-content">
-            <p class="story-eyebrow" aria-hidden="true">01</p>
-            <h2 id="chapter-bar" class="story-heading">First, the bar</h2>
-            <p class="story-hint">// hospitality · pace · flavour</p>
-            <p class="story-body">
-              Before anything “technical” shows up on a portfolio, it helps to know I spend real time
-              behind the bar: reading a room, balancing flavours, and keeping service calm when it’s
-              busy. That’s why there’s a cocktail section here — it isn’t random decoration; it’s part
-              of how I work and what I enjoy making.
-            </p>
-            <p class="story-body">
-              I like original drinks built around <strong>New Zealand ingredients</strong> — the kind
-              of recipes you’d actually pour for someone, not just list on a page.
-            </p>
-            <p class="story-cta">
-              <a class="btn btn-accent" href="cocktails.html">Cocktails I’ve made</a>
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section
-        class="story-panel story-panel--lab reveal reveal-stagger-1"
-        aria-labelledby="chapter-lab"
-        data-story-theme="lab"
-      >
-        <div class="story-panel-bg" aria-hidden="true"></div>
-        <div class="container story-panel-inner">
-          <div class="story-content">
-            <p class="story-eyebrow" aria-hidden="true">02</p>
-            <h2 id="chapter-lab" class="story-heading">Then, the homelab</h2>
-            <p class="story-hint">// linux · networking · self-host</p>
-            <p class="story-body">
-              Outside of study and shifts, I’m usually learning by building: a Raspberry Pi stack,
-              DNS and reverse proxies, media automation, and encrypted access between devices. I care
-              about systems that are <strong>understandable</strong> — where I can explain why each
-              piece exists.
-            </p>
-            <p class="story-body">
-              If you’re curious what that looks like in practice, the projects page is the deeper dive
-              (with room for write-ups as I go).
-            </p>
-            <p class="story-cta">
-              <a class="btn btn-accent" href="projects.html">Projects &amp; homelab</a>
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section
-        class="story-panel story-panel--study reveal reveal-stagger-2"
-        aria-labelledby="chapter-study"
-        data-story-theme="study"
-      >
-        <div class="story-panel-bg" aria-hidden="true"></div>
-        <div class="container story-panel-inner">
-          <div class="story-content">
-            <p class="story-eyebrow" aria-hidden="true">03</p>
-            <h2 id="chapter-study" class="story-heading">What I’m studying</h2>
-            <p class="story-hint">// AUT · BCIS · security + networks</p>
-            <p class="story-body">
-              I’m working toward a <strong>Bachelor of Computing &amp; Information Sciences</strong>
-              at <strong>AUT</strong>, majoring in <strong>cybersecurity and networks</strong>. The
-              homelab stuff and the degree aren’t separate hobbies — they reinforce each other: theory
-              meets cables, configs, and the occasional late-night “why is DNS doing that?”
-            </p>
-            <p class="story-body">
-              For a structured rundown — education, experience, skills — the CV page is the place.
-            </p>
-            <p class="story-cta">
-              <a class="btn btn-accent" href="cv.html">View my CV</a>
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section
-        class="story-panel story-panel--outro reveal"
-        aria-labelledby="chapter-outro"
-        data-story-theme="outro"
-      >
-        <div class="story-panel-bg" aria-hidden="true"></div>
-        <div class="container story-panel-inner">
-          <div class="story-content">
-            <h2 id="chapter-outro" class="story-heading story-heading--small">If you want to talk</h2>
-            <p class="story-body">
-              Whether it’s cybersecurity, networking, self-hosting, or something bar-adjacent — I’m
-              happy to hear from you. No contact form; just a few links.
-            </p>
-            <p class="story-cta">
-              <a class="btn" href="contact.html">Contact</a>
-            </p>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <footer class="site-footer site-footer--story">
-      <div class="container">
-        <p class="footer-text">
-          © <span class="js-year"></span> Oli Medwin ·
-          <a href="cocktails.html">Cocktails</a>
-          ·
-          <a href="projects.html">Projects</a>
-          ·
-          <a href="cv.html">CV</a>
-        </p>
-      </div>
-    </footer>
+    <nav class="mobile-quick-nav" aria-label="Mobile quick navigation">
+      <a class="mobile-quick-link is-active" data-target="intro" href="#intro">Home</a>
+      <a class="mobile-quick-link" data-target="overview" href="#overview">Profile</a>
+      <a class="mobile-quick-link" data-target="builder" href="#builder">Projects</a>
+      <a class="mobile-quick-link" data-target="contact" href="#contact">Contact</a>
+    </nav>
 
     <script defer src="script.js"></script>
   </body>

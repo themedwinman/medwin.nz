@@ -10,69 +10,40 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 
     <link rel="stylesheet" href="style.css" />
     <title>Oli Medwin | Contact</title>
   </head>
-  <body>
-    <header class="site-header site-header--minimal">
-      <div class="container header-inner header-inner--minimal">
-        <a class="brand" href="index.html">← Back to the story</a>
-      </div>
-    </header>
+  <body class="detail-page">
+    <main class="detail-main">
+      <section class="detail-shell" aria-labelledby="contact-title">
+        <div class="detail-top">
+          <a class="back-link" href="index.html#contact">Back to homepage contact section</a>
+          <a class="back-link back-link-subtle" href="index.html">Home</a>
+        </div>
 
-    <main class="site-main">
-      <div class="container">
-        <section class="section" aria-labelledby="contact-title">
-          <h1 class="section-title" id="contact-title">Contact</h1>
-          <p class="lead">
-            Simple links — no forms. If you’d like to chat about cybersecurity, networking, or
-            homelabs, I’m happy to hear from you.
-          </p>
+        <p class="detail-kicker">Contact</p>
+        <h1 class="detail-title" id="contact-title">Let us connect</h1>
+        <p class="detail-lead">
+          I am open to internship, graduate, and junior opportunities across cybersecurity,
+          networking, and infrastructure-focused roles.
+        </p>
 
-          <div class="contact-grid" style="margin-top: 1.25rem;">
-            <a class="btn btn-accent" href="mailto:hello@medwin.nz">Email Oli</a>
-            <a
-              class="btn"
-              href="https://github.com/oli-medwin"
-              target="_blank"
-              rel="noopener"
-            >
-              GitHub
-            </a>
-            <a
-              class="btn"
-              href="https://www.linkedin.com/in/oli-medwin/"
-              target="_blank"
-              rel="noopener"
-            >
-              LinkedIn
-            </a>
-          </div>
-        </section>
-      </div>
+        <div class="contact-grid detail-contact-grid">
+          <a class="btn btn-accent" href="mailto:hello@medwin.nz">Email Oli</a>
+          <a class="btn" href="https://github.com/oli-medwin" target="_blank" rel="noopener">GitHub</a>
+          <a class="btn" href="https://www.linkedin.com/in/oli-medwin/" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+      </section>
     </main>
 
-    <footer class="site-footer">
+    <footer class="site-footer detail-footer">
       <div class="container">
-        <p class="footer-text footer-links">
-          © <span class="js-year"></span> Oli Medwin ·
-          <a href="index.html">Story</a>
-          ·
-          <a href="cocktails.html">Cocktails</a>
-          ·
-          <a href="projects.html">Projects</a>
-          ·
-          <a href="cv.html">CV</a>
-        </p>
+        <p class="footer-text">© <span class="js-year"></span> Oli Medwin. All rights reserved.</p>
       </div>
     </footer>
 
     <script defer src="script.js"></script>
   </body>
 </html>
-

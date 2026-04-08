@@ -5,205 +5,84 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
-      content="Oli Medwin cocktail recipe book — original drinks made with New Zealand ingredients."
+      content="Oli Medwin cocktail notes — selected recipes and service-focused drink design."
     />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 
     <link rel="stylesheet" href="style.css" />
     <title>Oli Medwin | Cocktails</title>
   </head>
-  <body>
-    <header class="site-header site-header--minimal">
-      <div class="container header-inner header-inner--minimal">
-        <a class="brand" href="index.html">← Back to the story</a>
-        <a class="header-quiet" href="contact.html">Contact</a>
-      </div>
-    </header>
+  <body class="detail-page">
+    <main class="detail-main">
+      <section class="detail-shell" aria-labelledby="cocktails-title">
+        <div class="detail-top">
+          <a class="back-link" href="index.html#bartender">Back to homepage craft section</a>
+          <a class="back-link back-link-subtle" href="index.html">Home</a>
+        </div>
 
-    <main class="site-main">
-      <div class="container">
-        <section class="section" aria-labelledby="cocktails-title">
-          <h1 class="section-title" id="cocktails-title">Cocktail Recipe Book</h1>
-          <p class="lead">
-            Original cocktails made with New Zealand ingredients. Tap a card to flip — ingredients
-            and method on the back.
-          </p>
+        <p class="detail-kicker">Craft</p>
+        <h1 class="detail-title" id="cocktails-title">Cocktail recipe notes</h1>
+        <p class="detail-lead">
+          A small selection of recipe notes that reflect consistency, service flow, and ingredient balance.
+        </p>
 
-          <div class="flip-grid flip-grid--cocktails">
-            <div
-              class="flip-card"
-              role="button"
-              tabindex="0"
-              data-flipped="false"
-              aria-expanded="false"
-              aria-label="Flip recipe: Fruit Twister Cyclone"
-            >
-              <div class="flip-card-inner">
-                <div class="flip-card-front">
-                  <div class="flip-card-front-inner">
-                    <h3>Fruit Twister Cyclone</h3>
-                    <p class="recipe-note">Retro cordial brightness with Cyclone ice-block chill.</p>
-                    <p class="recipe-meta">Tap to reveal ingredients &amp; method</p>
-                  </div>
-                </div>
-                <div class="flip-card-back">
-                  <div class="recipe-sections">
-                    <div>
-                      <h4>Ingredients</h4>
-                      <ul class="recipe-ingredients">
-                        <li>Retro cordial</li>
-                        <li>Cyclone ice block (ice-cold)</li>
-                        <li>NZ citrus garnish (optional)</li>
-                      </ul>
-                    </div>
-                    <div>
-                      <h4>Method</h4>
-                      <ol class="recipe-method">
-                        <li>Fill a glass halfway with ice (or use the Cyclone ice block).</li>
-                        <li>Pour in retro cordial to taste.</li>
-                        <li>Top with a splash of citrus juice if you like it sharper.</li>
-                        <li>Stir gently and serve immediately.</li>
-                      </ol>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+        <div class="recipe-grid detail-recipe-grid" aria-label="Cocktail recipes">
+          <article class="recipe-card detail-recipe-card">
+            <h3>Oli's Feijoa Tom Collins</h3>
+            <p class="recipe-note">Feijoa-forward, bright citrus, NZ gin backbone.</p>
+            <h4>Ingredients</h4>
+            <ul class="recipe-ingredients">
+              <li>NZ gin</li>
+              <li>Feijoa puree or cordial</li>
+              <li>Lemon juice</li>
+              <li>Sugar syrup</li>
+              <li>Soda water</li>
+            </ul>
+            <h4>Method</h4>
+            <ol class="recipe-method">
+              <li>Shake gin, feijoa, lemon, and syrup with ice.</li>
+              <li>Strain into a tall glass over fresh ice.</li>
+              <li>Top with soda and stir once.</li>
+              <li>Garnish and serve.</li>
+            </ol>
+          </article>
 
-            <div
-              class="flip-card"
-              role="button"
-              tabindex="0"
-              data-flipped="false"
-              aria-expanded="false"
-              aria-label="Flip recipe: Oli's Feijoa Tom Collins"
-            >
-              <div class="flip-card-inner">
-                <div class="flip-card-front">
-                  <div class="flip-card-front-inner">
-                    <h3>Oli's Feijoa Tom Collins</h3>
-                    <p class="recipe-note">Feijoa-forward, with an NZ-gin backbone and a clean fizz.</p>
-                    <p class="recipe-meta">Tap to reveal ingredients &amp; method</p>
-                  </div>
-                </div>
-                <div class="flip-card-back">
-                  <div class="recipe-sections">
-                    <div>
-                      <h4>Ingredients</h4>
-                      <ul class="recipe-ingredients">
-                        <li>Feijoa (fresh puree or cordial)</li>
-                        <li>NZ gin (Tom Collins style)</li>
-                        <li>Lemon juice</li>
-                        <li>Sugar syrup (to balance)</li>
-                        <li>Sparkling soda or tonic</li>
-                      </ul>
-                    </div>
-                    <div>
-                      <h4>Method</h4>
-                      <ol class="recipe-method">
-                        <li>Shake gin, feijoa, lemon, and syrup with ice.</li>
-                        <li>Strain into a tall glass over fresh ice.</li>
-                        <li>Top with soda and stir once.</li>
-                        <li>Garnish with a citrus twist (optional).</li>
-                      </ol>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+          <article class="recipe-card detail-recipe-card">
+            <h3>Fruit Twister Cyclone</h3>
+            <p class="recipe-note">Retro cordial profile with a sharp chilled finish.</p>
+            <h4>Ingredients</h4>
+            <ul class="recipe-ingredients">
+              <li>Retro cordial base</li>
+              <li>Cyclone-style ice element</li>
+              <li>Citrus garnish (optional)</li>
+            </ul>
+            <h4>Method</h4>
+            <ol class="recipe-method">
+              <li>Build over ice in a highball glass.</li>
+              <li>Adjust cordial strength to taste.</li>
+              <li>Add citrus for brightness if needed.</li>
+              <li>Serve immediately while very cold.</li>
+            </ol>
+          </article>
+        </div>
 
-            <div
-              class="flip-card"
-              role="button"
-              tabindex="0"
-              data-flipped="false"
-              aria-expanded="false"
-              aria-label="Flip recipe: Coming soon"
-            >
-              <div class="flip-card-inner">
-                <div class="flip-card-front">
-                  <div class="flip-card-front-inner">
-                    <h3>Future recipe slot</h3>
-                    <p class="recipe-note">Coming soon — another NZ-ingredient cocktail.</p>
-                    <p class="recipe-meta">Tap to reveal (placeholder)</p>
-                  </div>
-                </div>
-                <div class="flip-card-back">
-                  <div class="recipe-sections">
-                    <div>
-                      <h4>Ingredients</h4>
-                      <ul class="recipe-ingredients">
-                        <li>Coming soon</li>
-                      </ul>
-                    </div>
-                    <div>
-                      <h4>Method</h4>
-                      <ol class="recipe-method">
-                        <li>Coming soon</li>
-                        <li>Coming soon</li>
-                      </ol>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+        <p class="detail-note">
+          More recipes are tracked over time as ideas are tested and refined in service.
+        </p>
 
-            <div
-              class="flip-card"
-              role="button"
-              tabindex="0"
-              data-flipped="false"
-              aria-expanded="false"
-              aria-label="Flip recipe: Coming soon"
-            >
-              <div class="flip-card-inner">
-                <div class="flip-card-front">
-                  <div class="flip-card-front-inner">
-                    <h3>Future recipe slot</h3>
-                    <p class="recipe-note">Coming soon — notes in progress for the next pour.</p>
-                    <p class="recipe-meta">Tap to reveal (placeholder)</p>
-                  </div>
-                </div>
-                <div class="flip-card-back">
-                  <div class="recipe-sections">
-                    <div>
-                      <h4>Ingredients</h4>
-                      <ul class="recipe-ingredients">
-                        <li>Coming soon</li>
-                      </ul>
-                    </div>
-                    <div>
-                      <h4>Method</h4>
-                      <ol class="recipe-method">
-                        <li>Coming soon</li>
-                        <li>Coming soon</li>
-                      </ol>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-      </div>
+        <div class="page-actions">
+          <a class="btn" href="index.html#bartender">Back to homepage section</a>
+          <a class="btn btn-accent" href="index.html#contact">Contact</a>
+        </div>
+      </section>
     </main>
 
-    <footer class="site-footer">
+    <footer class="site-footer detail-footer">
       <div class="container">
-        <p class="footer-text footer-links">
-          © <span class="js-year"></span> Oli Medwin ·
-          <a href="index.html">Story</a>
-          ·
-          <a href="projects.html">Projects</a>
-          ·
-          <a href="cv.html">CV</a>
-        </p>
+        <p class="footer-text">© <span class="js-year"></span> Oli Medwin. All rights reserved.</p>
       </div>
     </footer>
 
