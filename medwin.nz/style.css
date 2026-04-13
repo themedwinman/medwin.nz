@@ -813,6 +813,78 @@ button.project-card.project-expand:focus-visible {
   color: #8d8a84;
 }
 
+.recruiter-strip {
+  margin-top: 1rem;
+  border: 1px solid var(--story-border);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.02);
+  padding: 0.85rem;
+}
+
+.recruiter-label {
+  margin: 0 0 0.55rem;
+  color: #d8d5d0;
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.recruiter-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.recruiter-links .btn {
+  min-height: 40px;
+  padding: 0.55rem 0.88rem;
+  font-size: 0.9rem;
+}
+
+.intro-cta .btn {
+  min-height: 40px;
+  padding: 0.55rem 0.9rem;
+  font-size: 0.9rem;
+}
+
+.back-to-top {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  z-index: 41;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: rgba(12, 16, 24, 0.84);
+  color: #f2f1ee;
+  font-weight: 700;
+  font-size: 0.84rem;
+  letter-spacing: 0.03em;
+  min-height: 42px;
+  padding: 0.55rem 0.9rem;
+  cursor: pointer;
+  opacity: 0;
+  transform: translateY(10px);
+  pointer-events: none;
+  transition: opacity 180ms ease, transform 180ms ease, border-color 180ms ease, background-color 180ms ease;
+}
+
+.back-to-top:hover {
+  border-color: rgba(210, 176, 139, 0.82);
+  background: rgba(18, 22, 31, 0.95);
+}
+
+.back-to-top.is-visible {
+  opacity: 1;
+  transform: none;
+  pointer-events: auto;
+}
+
+.project-details a,
+.project-modal-body a {
+  color: #f0c79c;
+}
+
 .chapter-lead {
   color: var(--story-muted);
   margin: 1rem 0 0;
@@ -1284,6 +1356,37 @@ button.project-card.project-expand:focus-visible {
     gap: 0.5rem;
   }
 
+  .recruiter-strip {
+    margin-top: 0.85rem;
+    padding: 0.74rem;
+  }
+
+  .recruiter-label {
+    font-size: 0.72rem;
+    margin-bottom: 0.45rem;
+  }
+
+  .recruiter-links {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+
+  .recruiter-links .btn {
+    width: 100%;
+    justify-content: center;
+    min-height: 42px;
+  }
+
+  .intro-cta {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .intro-cta .btn {
+    min-height: 42px;
+    font-size: 0.85rem;
+  }
+
   .chapter-cta .btn {
     width: 100%;
     justify-content: center;
@@ -1369,6 +1472,12 @@ button.project-card.project-expand:focus-visible {
     backdrop-filter: blur(12px);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.24);
     pointer-events: auto;
+  }
+
+  .back-to-top {
+    right: 0.78rem;
+    bottom: max(4.1rem, calc(4rem + env(safe-area-inset-bottom, 0px)));
+    z-index: 42;
   }
 
   .mobile-quick-link {

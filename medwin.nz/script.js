@@ -28,8 +28,17 @@ document.addEventListener("DOMContentLoaded", () => {
     const mobileQuickLinks = Array.from(document.querySelectorAll(".mobile-quick-link[data-target]"));
     const chapterJumps = [...chapterDots, ...mobileQuickLinks];
     const chapters = Array.from(document.querySelectorAll(".chapter[id]"));
+    const backToTop = document.getElementById("back-to-top");
     const prefersReducedMotion =
       window.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches ?? false;
+
+    const updateBackToTop = (chapterId) => {
+      if (!backToTop) return;
+      const showButton = chapterId && chapterId !== "intro";
+      backToTop.classList.toggle("is-visible", Boolean(showButton));
+      backToTop.setAttribute("aria-hidden", showButton ? "false" : "true");
+      backToTop.tabIndex = showButton ? 0 : -1;
+    };
 
     const setActiveChapter = (chapterId) => {
       chapterJumps.forEach((jump) => {
@@ -38,6 +47,8 @@ document.addEventListener("DOMContentLoaded", () => {
         if (isActive) jump.setAttribute("aria-current", "true");
         else jump.removeAttribute("aria-current");
       });
+
+      updateBackToTop(chapterId);
     };
 
     const updateHash = (id) => {
@@ -77,6 +88,12 @@ document.addEventListener("DOMContentLoaded", () => {
         scrollToChapter(targetId, "smooth");
       });
     });
+
+    if (backToTop) {
+      backToTop.addEventListener("click", () => {
+        scrollToChapter("intro", "smooth");
+      });
+    }
 
     // Handle all in-page hash links inside the story layout.
     document.addEventListener("click", (event) => {

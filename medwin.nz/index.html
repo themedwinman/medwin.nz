@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
-      content="Oli Medwin portfolio: BCIS student focused on cybersecurity, networks, and practical infrastructure projects."
+      content="Oli Medwin portfolio: cybersecurity and networking student in Auckland with internship-ready project and infrastructure experience."
     />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -26,20 +26,28 @@
             <p class="chapter-kicker">Personal site</p>
             <h1 id="intro-title">Hi, I'm Oli.</h1>
             <p class="home-subtitle">
-              I'm studying cybersecurity and networks at AUT, working in hospitality, and building
-              practical infrastructure projects.
+              Penultimate-year AUT cybersecurity and networks student building practical, secure systems.
             </p>
 
             <p class="home-meta">
-              <span>BCIS student at AUT</span>
-              <span>Part-time hospitality work</span>
+              <span>Expected graduation: 2027</span>
+              <span>GPA: 7.37/9.0</span>
               <span>Auckland, New Zealand</span>
             </p>
 
-            <div class="chapter-cta" aria-label="Intro quick links">
-              <a class="btn btn-accent" href="#overview">About me</a>
+            <div class="recruiter-strip" aria-label="Recruiter quick contact links">
+              <p class="recruiter-label">For employers</p>
+              <div class="recruiter-links">
+                <a class="btn btn-accent" href="https://www.linkedin.com/in/olivermedwin/" target="_blank" rel="noopener">LinkedIn</a>
+                <a class="btn" href="mailto:oli@medwin.nz">oli@medwin.nz</a>
+                <a class="btn" href="tel:+64225320776">022 532 0776</a>
+              </div>
+            </div>
+
+            <div class="chapter-cta intro-cta" aria-label="Intro quick links">
+              <a class="btn btn-accent" href="#overview">Profile</a>
+              <a class="btn" href="cv.html">View CV</a>
               <a class="btn" href="#builder">Projects</a>
-              <a class="btn" href="#contact">Contact</a>
             </div>
           </div>
         </section>
@@ -52,18 +60,18 @@
             <div class="overview-grid" aria-label="Profile overview cards">
               <article class="overview-card">
                 <h3>Education</h3>
-                <p>Bachelor of Computing and Information Sciences, AUT.</p>
+                <p>Bachelor of Computer and Information Science, AUT.</p>
                 <p>Major in Cybersecurity and Networks.</p>
               </article>
 
               <article class="overview-card">
                 <h3>Current work</h3>
-                <p>Hospitality role focused on service, pace, and teamwork.</p>
+                <p>Bartender at Shed 16, balancing service, teamwork, and fast execution.</p>
               </article>
 
               <article class="overview-card">
                 <h3>Technical focus</h3>
-                <p>Secure networking, Linux systems, and practical automation.</p>
+                <p>Authentication/RBAC, secure networking, Linux systems, and infrastructure operations.</p>
               </article>
             </div>
 
@@ -71,16 +79,17 @@
               <summary>More about how I work</summary>
               <div class="expand-body">
                 <ul class="cv-list">
-                  <li>Calm under pressure and clear in communication.</li>
-                  <li>Service mindset from hospitality experience.</li>
-                  <li>I like simple, reliable systems people can trust.</li>
+                  <li>Strong troubleshooting and communication in both technical and client-facing settings.</li>
+                  <li>Completed 800+ hours of community service through St John Youth and Student Volunteer Army.</li>
+                  <li>Grand Prior's Award recipient for leadership and community contribution.</li>
                 </ul>
               </div>
             </details>
 
             <div class="chapter-cta">
-              <a class="btn btn-accent" href="cv.pdf">Download CV</a>
-              <a class="btn" href="https://www.linkedin.com/in/oli-medwin/" target="_blank" rel="noopener">LinkedIn</a>
+              <a class="btn btn-accent" href="cv.html">Open CV</a>
+              <a class="btn" href="cv.pdf">Download CV PDF</a>
+              <a class="btn" href="https://www.linkedin.com/in/olivermedwin/" target="_blank" rel="noopener">LinkedIn</a>
             </div>
           </div>
         </section>
@@ -99,28 +108,27 @@
                 class="project-card project-expand"
                 aria-haspopup="dialog"
                 aria-controls="project-modal"
-                aria-label="Open project details for monkeserver homelab stack"
+                aria-label="Open project details for arena house points tracking web application"
               >
-                <h3>Monkeserver homelab stack</h3>
+                <h3>Arena House Points Tracking Web Application</h3>
                 <p>
-                  Raspberry Pi stack with media, DNS, secure remote access, and reverse proxy.
+                  Full-stack app for primary and high schools to track house points with secure role-based access.
                 </p>
                 <div class="tag-row" aria-label="Project tags">
-                  <span class="tag">Self-hosted</span>
-                  <span class="tag">Linux</span>
-                  <span class="tag">Networking</span>
+                  <span class="tag">Full-stack</span>
+                  <span class="tag">OAuth</span>
+                  <span class="tag">RBAC</span>
                 </div>
                 <div class="project-details" hidden>
                   <p>
-                    A home media and infrastructure stack designed for reliability and secure remote access.
+                    Production web app designed to support schools managing house competition points.
                   </p>
-                  <h4>Core pieces</h4>
+                  <h4>Highlights</h4>
                   <ul>
-                    <li>Jellyfin for streaming and library hosting.</li>
-                    <li>Sonarr/Radarr for automation and organization.</li>
-                    <li>Caddy for reverse proxy and HTTPS.</li>
-                    <li>Pi-hole for local DNS filtering.</li>
-                    <li>Tailscale for encrypted access without public exposure.</li>
+                    <li>Built the full-stack application and shipped to production on cloud hosting.</li>
+                    <li>Implemented Google OAuth authentication and role-based access control.</li>
+                    <li>Tech stack: JavaScript/TypeScript, OAuth, Vercel.</li>
+                    <li>Live app: arenapointstracking.vercel.app</li>
                   </ul>
                 </div>
               </button>
@@ -130,26 +138,27 @@
                 class="project-card project-expand"
                 aria-haspopup="dialog"
                 aria-controls="project-modal"
-                aria-label="Open project details for Pi-hole and Caddy reverse proxy"
+                aria-label="Open project details for self hosted network home lab"
               >
-                <h3>Pi-hole + Caddy reverse proxy</h3>
+                <h3>Self Hosted Network Home Lab</h3>
                 <p>
-                  Clean local routing with DNS control and HTTPS for internal services.
+                  Raspberry Pi home lab with secure remote access, DNS filtering, and private service hosting.
                 </p>
                 <div class="tag-row" aria-label="Project tags">
                   <span class="tag">DNS</span>
-                  <span class="tag">Caddy</span>
-                  <span class="tag">TLS</span>
+                  <span class="tag">VPN</span>
+                  <span class="tag">Linux</span>
                 </div>
                 <div class="project-details" hidden>
                   <p>
-                    Friendly local names plus modern HTTPS, without brittle manual certificate workflows.
+                    Self-managed network environment focused on privacy, reliability, and secure authentication.
                   </p>
                   <h4>Highlights</h4>
                   <ul>
-                    <li>Pi-hole as the local DNS control point.</li>
-                    <li>Caddy for automatic cert handling and proxy routes.</li>
-                    <li>Wildcard setup to speed up new service onboarding.</li>
+                    <li>Configured Pi-hole DNS filtering and Tailscale VPN for secure remote access.</li>
+                    <li>Deployed and maintained Vaultwarden, Jellyfin, and Syncthing across a private VPN.</li>
+                    <li>Maintained NAS backups and user-based access control for media and storage services.</li>
+                    <li>Tech stack: Linux, Docker, DNS, VPN, user-based access control.</li>
                   </ul>
                 </div>
               </button>
@@ -168,6 +177,7 @@
             </details>
 
             <div class="chapter-cta">
+              <a class="btn btn-accent" href="https://arenapointstracking.vercel.app/" target="_blank" rel="noopener">Open Arena App</a>
               <a class="btn" href="projects.html">See full project list</a>
             </div>
           </div>
@@ -219,7 +229,7 @@
             <p class="chapter-kicker">Contact</p>
             <h2 id="contact-title">Let's connect.</h2>
             <p class="chapter-lead">
-              Open to internships and graduate opportunities.
+              Open to cybersecurity internship, graduate, and junior opportunities.
             </p>
 
             <details class="story-expand compact-expand">
@@ -230,8 +240,9 @@
             </details>
 
             <div class="contact-actions">
-              <a class="btn btn-accent" href="mailto:hello@medwin.nz">Email Oli</a>
-              <a class="btn" href="https://www.linkedin.com/in/oli-medwin/" target="_blank" rel="noopener">LinkedIn</a>
+              <a class="btn btn-accent" href="https://www.linkedin.com/in/olivermedwin/" target="_blank" rel="noopener">LinkedIn</a>
+              <a class="btn" href="mailto:oli@medwin.nz">oli@medwin.nz</a>
+              <a class="btn" href="tel:+64225320776">022 532 0776</a>
               <a class="btn" href="https://github.com/oli-medwin" target="_blank" rel="noopener">GitHub</a>
             </div>
 
@@ -272,6 +283,10 @@
       <a class="mobile-quick-link" data-target="builder" href="#builder">Projects</a>
       <a class="mobile-quick-link" data-target="contact" href="#contact">Contact</a>
     </nav>
+
+    <button class="back-to-top" id="back-to-top" type="button" aria-label="Back to top" aria-hidden="true">
+      Back to top
+    </button>
 
     <script defer src="script.js"></script>
   </body>
