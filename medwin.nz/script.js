@@ -5,6 +5,8 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   const isStoryPage = document.body.classList.contains("story-page");
+  const prefersReducedMotion =
+    window.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches ?? false;
 
   // Legacy nav highlighting for multi-page files still in the repo.
   if (!isStoryPage) {
@@ -22,6 +24,33 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  // Smart back links: use history when possible, otherwise navigate to fallback section.
+  document.querySelectorAll(".js-smart-back").forEach((link) => {
+    link.addEventListener("click", (event) => {
+      const fallback =
+        link.getAttribute("data-fallback") || link.getAttribute("href") || "index.html";
+
+      const isSameOriginReferrer = (() => {
+        if (!document.referrer) return false;
+        try {
+          const ref = new URL(document.referrer);
+          return ref.origin === window.location.origin;
+        } catch {
+          return false;
+        }
+      })();
+
+      if (window.history.length > 1 && isSameOriginReferrer) {
+        event.preventDefault();
+        window.history.back();
+        return;
+      }
+
+      event.preventDefault();
+      window.location.href = fallback;
+    });
+  });
+
   if (isStoryPage) {
     const scrollRoot = document.querySelector(".story-scroll");
     const chapterDots = Array.from(document.querySelectorAll(".rail-dot[data-target]"));
@@ -29,8 +58,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const chapterJumps = [...chapterDots, ...mobileQuickLinks];
     const chapters = Array.from(document.querySelectorAll(".chapter[id]"));
     const backToTop = document.getElementById("back-to-top");
-    const prefersReducedMotion =
-      window.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches ?? false;
 
     const updateBackToTop = (chapterId) => {
       if (!backToTop) return;
@@ -170,6 +197,92 @@ document.addEventListener("DOMContentLoaded", () => {
       setActiveChapter(chapters[0].id);
     }
   }
+
+  // Smoothly animate all details/summary blocks to avoid snap-jitter and abrupt jumps.
+  const detailsRoot = document.querySelector(".story-scroll");
+  let activeDetailsAnimations = 0;
+
+  const disableStorySnap = () => {
+    if (!detailsRoot) return;
+    activeDetailsAnimations += 1;
+    detailsRoot.classList.add("no-snap");
+  };
+
+  const enableStorySnap = () => {
+    if (!detailsRoot) return;
+    activeDetailsAnimations = Math.max(0, activeDetailsAnimations - 1);
+    if (activeDetailsAnimations === 0) {
+      detailsRoot.classList.remove("no-snap");
+    }
+  };
+
+  document.querySelectorAll("details").forEach((detailsEl) => {
+    const summary = detailsEl.querySelector("summary");
+    if (!summary) return;
+
+    let isAnimating = false;
+    summary.setAttribute(
+      "aria-expanded",
+      detailsEl.hasAttribute("open") ? "true" : "false"
+    );
+
+    summary.addEventListener("click", (event) => {
+      if (isAnimating) {
+        event.preventDefault();
+        return;
+      }
+
+      if (prefersReducedMotion) {
+        requestAnimationFrame(() => {
+          summary.setAttribute(
+            "aria-expanded",
+            detailsEl.hasAttribute("open") ? "true" : "false"
+          );
+        });
+        return;
+      }
+
+      event.preventDefault();
+      isAnimating = true;
+
+      const isOpen = detailsEl.hasAttribute("open");
+      const startHeight = detailsEl.offsetHeight;
+
+      detailsEl.classList.add("is-animating");
+      detailsEl.style.overflow = "hidden";
+      detailsEl.style.height = `${startHeight}px`;
+      disableStorySnap();
+
+      if (!isOpen) {
+        detailsEl.setAttribute("open", "");
+      }
+
+      const targetHeight = isOpen ? summary.offsetHeight : detailsEl.scrollHeight;
+      summary.setAttribute("aria-expanded", isOpen ? "false" : "true");
+
+      requestAnimationFrame(() => {
+        detailsEl.style.transition = "height 260ms cubic-bezier(0.22, 1, 0.36, 1)";
+        detailsEl.style.height = `${targetHeight}px`;
+      });
+
+      const onTransitionEnd = () => {
+        if (isOpen) {
+          detailsEl.removeAttribute("open");
+        }
+
+        detailsEl.style.removeProperty("transition");
+        detailsEl.style.removeProperty("height");
+        detailsEl.style.removeProperty("overflow");
+        detailsEl.classList.remove("is-animating");
+
+        isAnimating = false;
+        enableStorySnap();
+        detailsEl.removeEventListener("transitionend", onTransitionEnd);
+      };
+
+      detailsEl.addEventListener("transitionend", onTransitionEnd);
+    });
+  });
 
   // Keep legacy flip-card behavior for cocktails.html.
   document.querySelectorAll(".flip-card").forEach((btn) => {
