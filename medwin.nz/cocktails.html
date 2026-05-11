@@ -5,62 +5,75 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
-      content="Oli Medwin cocktail notes — selected recipes and service-focused drink design."
+      content="Oli Medwin cocktail notes — recipes shaped by service, balance, and a few NZ ingredients."
     />
 
+    <meta name="theme-color" content="#1a1714" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Outfit:wght@300;400;500;600;700&family=Caveat:wght@500;600&display=swap"
+      rel="stylesheet"
+    />
 
     <link rel="stylesheet" href="style.css" />
     <title>Oli Medwin | Cocktails</title>
   </head>
   <body class="detail-page">
+    <div class="ambient" aria-hidden="true">
+      <div class="ambient-topo"></div>
+      <div class="ambient-grain"></div>
+      <div class="ambient-vignette"></div>
+    </div>
+
+    <div class="cursor-ring" id="cursor-ring" aria-hidden="true"></div>
+    <div class="cursor-dot" id="cursor-dot" aria-hidden="true"></div>
+
     <main class="detail-main">
       <section class="detail-shell" aria-labelledby="cocktails-title">
         <div class="detail-top">
-          <a class="back-link" href="index.html#bartender">Back to homepage craft section</a>
-          <a class="back-link back-link-subtle" href="index.html">Home</a>
+          <a class="back-link" href="index.html#cocktail" data-cursor="hover">Back to off-hours</a>
+          <a class="back-link back-link-subtle" href="index.html" data-cursor="hover">Home</a>
         </div>
 
-        <p class="detail-kicker">Craft</p>
-        <h1 class="detail-title" id="cocktails-title">Cocktail recipe notes</h1>
+        <p class="detail-kicker">An aside</p>
+        <h1 class="detail-title" id="cocktails-title">A few drinks worth making.</h1>
         <p class="detail-lead">
-          A small selection of recipe notes that reflect consistency, service flow, and ingredient balance.
+          Recipe notes shaped by what works on a busy bar &mdash; consistent, balanced, and built around ingredients you can actually find.
         </p>
 
-        <div class="recipe-grid detail-recipe-grid" aria-label="Cocktail recipes">
-          <article class="recipe-card detail-recipe-card">
-            <h3>Oli's Feijoa Tom Collins</h3>
-            <p class="recipe-note">Feijoa-forward, bright citrus, NZ gin backbone.</p>
-            <h4>Ingredients</h4>
-            <ul class="recipe-ingredients">
-              <li>NZ gin</li>
-              <li>Feijoa puree or cordial</li>
-              <li>Lemon juice</li>
-              <li>Sugar syrup</li>
-              <li>Soda water</li>
+        <div class="recipe-grid detail-section" aria-label="Cocktail recipes">
+          <article class="recipe">
+            <h3 class="recipe-name">Oli&rsquo;s Feijoa Tom Collins</h3>
+            <p class="recipe-note">Feijoa-forward, bright citrus, NZ gin backbone. Late-summer in a glass.</p>
+            <div class="recipe-divider"><span>Pour</span></div>
+            <ul>
+              <li>45 ml NZ gin</li>
+              <li>30 ml feijoa puree (or cordial)</li>
+              <li>20 ml fresh lemon juice</li>
+              <li>15 ml sugar syrup (1:1)</li>
+              <li>Soda water, to top</li>
             </ul>
-            <h4>Method</h4>
-            <ol class="recipe-method">
-              <li>Shake gin, feijoa, lemon, and syrup with ice.</li>
+            <div class="recipe-divider"><span>Method</span></div>
+            <ol>
+              <li>Shake gin, feijoa, lemon, and syrup hard with ice.</li>
               <li>Strain into a tall glass over fresh ice.</li>
-              <li>Top with soda and stir once.</li>
-              <li>Garnish and serve.</li>
+              <li>Top with soda and stir once, gently.</li>
+              <li>Garnish with a lemon wheel. Serve immediately.</li>
             </ol>
           </article>
 
-          <article class="recipe-card detail-recipe-card">
-            <h3>Fruit Twister Cyclone</h3>
-            <p class="recipe-note">Retro cordial profile with a sharp chilled finish.</p>
-            <h4>Ingredients</h4>
-            <ul class="recipe-ingredients">
+          <article class="recipe">
+            <h3 class="recipe-name">Fruit Twister Cyclone</h3>
+            <p class="recipe-note">Retro cordial profile with a sharp chilled finish. A crowd-pleaser at the end of a long shift.</p>
+            <div class="recipe-divider"><span>Pour</span></div>
+            <ul>
               <li>Retro cordial base</li>
               <li>Cyclone-style ice element</li>
               <li>Citrus garnish (optional)</li>
             </ul>
-            <h4>Method</h4>
-            <ol class="recipe-method">
+            <div class="recipe-divider"><span>Method</span></div>
+            <ol>
               <li>Build over ice in a highball glass.</li>
               <li>Adjust cordial strength to taste.</li>
               <li>Add citrus for brightness if needed.</li>
@@ -69,20 +82,21 @@
           </article>
         </div>
 
-        <p class="detail-note">
-          More recipes are tracked over time as ideas are tested and refined in service.
-        </p>
+        <p class="detail-note">More recipes added as they earn their place on the menu.</p>
 
         <div class="page-actions">
-          <a class="btn" href="index.html#bartender">Back to homepage section</a>
-          <a class="btn btn-accent" href="index.html#contact">Contact</a>
+          <a class="btn" href="index.html#cocktail" data-cursor="hover">Back to homepage</a>
+          <a class="btn btn-accent" href="index.html#contact" data-cursor="hover">Get in touch</a>
         </div>
       </section>
     </main>
 
-    <footer class="site-footer detail-footer">
-      <div class="container">
-        <p class="footer-text">© <span class="js-year"></span> Oli Medwin. All rights reserved.</p>
+    <footer class="site-footer">
+      <div class="container site-footer-inner">
+        <span class="footer-mark">Oli Medwin<span class="dot" aria-hidden="true"></span></span>
+        <p class="footer-note">
+          Built quietly in Auckland. <span class="accent">Always learning.</span> &copy; <span class="js-year"></span>
+        </p>
       </div>
     </footer>
 

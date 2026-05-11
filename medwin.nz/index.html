@@ -3,290 +3,385 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#1a1714" />
     <meta
       name="description"
-      content="Oli Medwin portfolio: cybersecurity and networking student in Auckland with internship-ready project and infrastructure experience."
+      content="Oli Medwin — AUT cybersecurity and networks student in Auckland. Authentication, secure networking, Linux, infrastructure."
     />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Outfit:wght@300;400;500;600;700&family=Caveat:wght@500;600&display=swap"
       rel="stylesheet"
     />
 
     <link rel="stylesheet" href="style.css" />
-    <title>Oli Medwin | Portfolio</title>
+    <noscript>
+      <style>
+        .hero-title .char, .hero-tagline, .hero-meta, .hero-aside, .hero-cta,
+        .reveal, .reveal-children > * { opacity: 1 !important; transform: none !important; }
+        .page-veil { display: none !important; }
+        .cursor-dot, .cursor-ring { display: none !important; }
+      </style>
+    </noscript>
+    <title>Oli Medwin — Cybersecurity & Networks</title>
   </head>
-  <body class="story-page">
-    <div class="story-scroll" id="story">
-      <main class="story-main">
-        <section class="chapter chapter-intro" id="intro" aria-labelledby="intro-title">
-          <div class="chapter-inner chapter-home reveal">
-            <p class="chapter-kicker">Personal site</p>
-            <h1 id="intro-title">Hi, I'm Oli.</h1>
-            <p class="home-subtitle">
-              Penultimate-year AUT cybersecurity and networks student building practical, secure systems.
-            </p>
+  <body>
+    <div class="page-veil" id="page-veil" aria-hidden="true">
+      <span class="page-veil-mark">Oli Medwin</span>
+    </div>
 
-            <p class="home-meta">
-              <span>Expected graduation: 2027</span>
-              <span>GPA: 7.37/9.0</span>
-              <span>Auckland, New Zealand</span>
-            </p>
+    <div class="ambient" aria-hidden="true">
+      <div class="ambient-topo"></div>
+      <div class="ambient-grain"></div>
+      <div class="ambient-vignette"></div>
+    </div>
 
-            <div class="recruiter-strip" aria-label="Recruiter quick contact links">
-              <p class="recruiter-label">For employers</p>
-              <div class="recruiter-links">
-                <a class="btn btn-accent" href="https://www.linkedin.com/in/olivermedwin/" target="_blank" rel="noopener">LinkedIn</a>
-                <a class="btn" href="mailto:oli@medwin.nz">oli@medwin.nz</a>
-                <a class="btn" href="tel:+64225320776">022 532 0776</a>
-              </div>
+    <div class="cursor-ring" id="cursor-ring" aria-hidden="true"></div>
+    <div class="cursor-dot" id="cursor-dot" aria-hidden="true"></div>
+
+    <header class="nav" id="nav">
+      <div class="container nav-inner">
+        <a href="#top" class="nav-mark" aria-label="Oli Medwin — back to top">
+          Oli Medwin<span class="dot" aria-hidden="true"></span>
+        </a>
+        <nav aria-label="Primary">
+          <ul class="nav-links" id="nav-links">
+            <li><a class="nav-link" href="#about" data-num="01" data-target="about">About</a></li>
+            <li><a class="nav-link" href="#projects" data-num="02" data-target="projects">Work</a></li>
+            <li><a class="nav-link" href="#cocktail" data-num="03" data-target="cocktail">Off-hours</a></li>
+            <li><a class="nav-link" href="#contact" data-num="04" data-target="contact">Contact</a></li>
+          </ul>
+        </nav>
+        <a href="#contact" class="nav-cta">Get in touch</a>
+        <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+          <span class="nav-toggle-bars" aria-hidden="true">
+            <span></span><span></span><span></span>
+          </span>
+        </button>
+      </div>
+    </header>
+
+    <main id="top">
+      <!-- =========================================================
+           Hero
+           ========================================================= -->
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="container hero-grid">
+          <div class="hero-lead">
+            <p class="hero-eyebrow">Auckland · Cybersecurity & Networks</p>
+            <h1 class="hero-title" id="hero-title" data-stagger>
+              Hi, I&rsquo;m <span class="accent">Oli.</span>
+            </h1>
+            <p class="hero-tagline">
+              A penultimate-year AUT student building practical, secure systems &mdash; and pouring drinks on the side.
+            </p>
+            <ul class="hero-meta">
+              <li>AUT BCIS · Cybersecurity</li>
+              <li>Graduating 2027</li>
+              <li>GPA 7.37 / 9.0</li>
+            </ul>
+            <a href="#projects" class="hero-cta" data-cursor="hover">
+              <span>View my work</span>
+              <span class="arrow" aria-hidden="true"></span>
+            </a>
+          </div>
+
+          <aside class="hero-aside" aria-label="Direct contact">
+            <p class="hero-aside-label">Reach me directly</p>
+            <ul class="hero-contacts">
+              <li>
+                <a class="hero-contact" href="mailto:oli@medwin.nz" data-cursor="hover">
+                  <span class="label">Email</span>
+                  <span class="value">oli@medwin.nz</span>
+                </a>
+              </li>
+              <li>
+                <a class="hero-contact" href="tel:+64225320776" data-cursor="hover">
+                  <span class="label">Phone</span>
+                  <span class="value">022 532 0776</span>
+                </a>
+              </li>
+              <li>
+                <a class="hero-contact" href="https://www.linkedin.com/in/olivermedwin/" target="_blank" rel="noopener" data-cursor="hover">
+                  <span class="label">LinkedIn</span>
+                  <span class="value">olivermedwin</span>
+                </a>
+              </li>
+            </ul>
+          </aside>
+        </div>
+
+        <span class="hero-scroll-cue" aria-hidden="true">Scroll</span>
+      </section>
+
+      <!-- =========================================================
+           About
+           ========================================================= -->
+      <section class="section about" id="about" aria-labelledby="about-title">
+        <div class="container">
+          <header class="section-head reveal">
+            <span class="section-num">01 — About</span>
+            <h2 class="section-title" id="about-title">A quiet <em>practitioner</em>, not a poser.</h2>
+          </header>
+
+          <div class="about-grid">
+            <div class="about-intro reveal">
+              <p>
+                I&rsquo;m studying Cybersecurity and Networks at AUT, expected to graduate in 2027 with a GPA of 7.37 / 9.0.
+                Most of my learning happens outside the classroom &mdash; in a homelab, on a service shift, in code.
+              </p>
+              <p>
+                What I care about: authentication done right, networks that don&rsquo;t leak, Linux that doesn&rsquo;t fall over,
+                and infrastructure you can hand to the next person without a sigh. Calm execution under pressure &mdash; whether
+                a Pi is misbehaving or the bar is six deep on a Saturday night.
+              </p>
             </div>
 
-            <div class="chapter-cta intro-cta" aria-label="Intro quick links">
-              <a class="btn btn-accent" href="#overview">Profile</a>
-              <a class="btn" href="cv.html">View CV</a>
-              <a class="btn" href="#builder">Projects</a>
+            <div class="about-cards reveal-children">
+              <article class="about-card">
+                <p class="about-card-label">Education</p>
+                <h3>BCIS, Cybersecurity & Networks</h3>
+                <p>Auckland University of Technology &mdash; expected 2027. GPA 7.37 / 9.0.</p>
+              </article>
+
+              <article class="about-card">
+                <p class="about-card-label">Currently</p>
+                <h3>Bartender at Shed 16</h3>
+                <p>Service, teamwork, and consistency under pressure. Sharpens everything technical work doesn&rsquo;t.</p>
+              </article>
+
+              <article class="about-card">
+                <p class="about-card-label">Technical focus</p>
+                <h3>Auth · Networks · Linux · Infra</h3>
+                <p>OAuth and RBAC, Tailscale meshes, Pi-hole DNS, Docker services, and operating things long enough to learn how they break.</p>
+              </article>
+
+              <article class="about-card">
+                <p class="about-card-label">Off the clock</p>
+                <h3>800+ hours of community service</h3>
+                <p>St John Youth and Student Volunteer Army. Grand Prior&rsquo;s Award for leadership and contribution.</p>
+              </article>
             </div>
           </div>
-        </section>
+        </div>
+      </section>
 
-        <section class="chapter chapter-overview" id="overview" aria-labelledby="overview-title">
-          <div class="chapter-inner reveal">
-            <p class="chapter-kicker">About</p>
-            <h2 id="overview-title">Quick profile</h2>
+      <!-- =========================================================
+           Projects
+           ========================================================= -->
+      <section class="section projects" id="projects" aria-labelledby="projects-title">
+        <div class="container">
+          <header class="section-head reveal">
+            <span class="section-num">02 — Selected work</span>
+            <h2 class="section-title" id="projects-title">Things I&rsquo;ve built &amp; <em>shipped</em>.</h2>
+          </header>
 
-            <div class="overview-grid" aria-label="Profile overview cards">
-              <article class="overview-card">
-                <h3>Education</h3>
-                <p>Bachelor of Computer and Information Science, AUT.</p>
-                <p>Major in Cybersecurity and Networks.</p>
-              </article>
+          <p class="section-lede reveal" style="margin-top: -1.5rem; margin-bottom: 3rem;">
+            A few practical builds across security, networking, and infrastructure &mdash; production code, real users, and the long tail of running something yourself.
+          </p>
 
-              <article class="overview-card">
-                <h3>Current work</h3>
-                <p>Bartender at Shed 16, balancing service, teamwork, and fast execution.</p>
-              </article>
-
-              <article class="overview-card">
-                <h3>Technical focus</h3>
-                <p>Authentication/RBAC, secure networking, Linux systems, and infrastructure operations.</p>
-              </article>
-            </div>
-
-            <details class="story-expand compact-expand">
-              <summary>More about how I work</summary>
-              <div class="expand-body">
-                <ul class="cv-list">
-                  <li>Strong troubleshooting and communication in both technical and client-facing settings.</li>
-                  <li>Completed 800+ hours of community service through St John Youth and Student Volunteer Army.</li>
-                  <li>Grand Prior's Award recipient for leadership and community contribution.</li>
-                </ul>
-              </div>
-            </details>
-
-            <div class="chapter-cta">
-              <a class="btn btn-accent" href="cv.html">Open CV</a>
-              <a class="btn" href="cv.pdf">Download CV PDF</a>
-              <a class="btn" href="https://www.linkedin.com/in/olivermedwin/" target="_blank" rel="noopener">LinkedIn</a>
-            </div>
-          </div>
-        </section>
-
-        <section class="chapter chapter-builder" id="builder" aria-labelledby="builder-title">
-          <div class="chapter-inner reveal">
-            <p class="chapter-kicker">Projects</p>
-            <h2 id="builder-title">Selected projects</h2>
-            <p class="chapter-lead">
-              A few recent infrastructure and security builds.
-            </p>
-
-            <div class="project-grid story-project-grid">
-              <button
-                type="button"
-                class="project-card project-expand"
-                aria-haspopup="dialog"
-                aria-controls="project-modal"
-                aria-label="Open project details for arena house points tracking web application"
-              >
-                <h3>Arena House Points Tracking Web Application</h3>
+          <div class="project-grid reveal-children">
+            <button
+              type="button"
+              class="project-card project-expand"
+              aria-haspopup="dialog"
+              aria-controls="project-modal"
+              aria-label="Open project details for Arena House Points Tracking Web Application"
+              data-cursor="hover"
+            >
+              <span class="project-card-cta" aria-hidden="true"></span>
+              <div class="project-card-inner">
+                <span class="project-card-num">Project 01</span>
+                <h3>Arena House Points Tracking</h3>
                 <p>
-                  Full-stack app for primary and high schools to track house points with secure role-based access.
+                  Full-stack production web app for primary and high schools to manage house competition points, with Google OAuth and role-based access for staff, students, and admins.
                 </p>
-                <div class="tag-row" aria-label="Project tags">
+                <div class="project-card-tags">
                   <span class="tag">Full-stack</span>
                   <span class="tag">OAuth</span>
                   <span class="tag">RBAC</span>
+                  <span class="tag">Vercel</span>
                 </div>
-                <div class="project-details" hidden>
-                  <p>
-                    Production web app designed to support schools managing house competition points.
-                  </p>
-                  <h4>Highlights</h4>
-                  <ul>
-                    <li>Built the full-stack application and shipped to production on cloud hosting.</li>
-                    <li>Implemented Google OAuth authentication and role-based access control.</li>
-                    <li>Tech stack: JavaScript/TypeScript, OAuth, Vercel.</li>
-                    <li>Live app: arenapointstracking.vercel.app</li>
-                  </ul>
-                </div>
-              </button>
-
-              <button
-                type="button"
-                class="project-card project-expand"
-                aria-haspopup="dialog"
-                aria-controls="project-modal"
-                aria-label="Open project details for self hosted network home lab"
-              >
-                <h3>Self Hosted Network Home Lab</h3>
+              </div>
+              <div class="project-details" hidden>
                 <p>
-                  Raspberry Pi home lab with secure remote access, DNS filtering, and private service hosting.
+                  Production web app designed to support schools managing house competition points end-to-end &mdash; from staff awarding points to admin oversight.
                 </p>
-                <div class="tag-row" aria-label="Project tags">
-                  <span class="tag">DNS</span>
-                  <span class="tag">VPN</span>
-                  <span class="tag">Linux</span>
-                </div>
-                <div class="project-details" hidden>
-                  <p>
-                    Self-managed network environment focused on privacy, reliability, and secure authentication.
-                  </p>
-                  <h4>Highlights</h4>
-                  <ul>
-                    <li>Configured Pi-hole DNS filtering and Tailscale VPN for secure remote access.</li>
-                    <li>Deployed and maintained Vaultwarden, Jellyfin, and Syncthing across a private VPN.</li>
-                    <li>Maintained NAS backups and user-based access control for media and storage services.</li>
-                    <li>Tech stack: Linux, Docker, DNS, VPN, user-based access control.</li>
-                  </ul>
-                </div>
-              </button>
-
-            </div>
-
-            <details class="story-expand compact-expand">
-              <summary>How I approach projects</summary>
-              <div class="expand-body">
-                <ul class="cv-list">
-                  <li>Clear architecture and documentation.</li>
-                  <li>Secure-by-default access patterns.</li>
-                  <li>Recovery paths when things fail.</li>
+                <h4>Highlights</h4>
+                <ul>
+                  <li>Built and shipped the full-stack application to production on cloud hosting.</li>
+                  <li>Implemented Google OAuth authentication with role-based access control.</li>
+                  <li>Tech: JavaScript / TypeScript, OAuth, Vercel.</li>
+                  <li>Live: <a href="https://arenapointstracking.vercel.app/" target="_blank" rel="noopener">arenapointstracking.vercel.app</a></li>
                 </ul>
               </div>
-            </details>
+            </button>
 
-            <div class="chapter-cta">
-              <a class="btn btn-accent" href="https://arenapointstracking.vercel.app/" target="_blank" rel="noopener">Open Arena App</a>
-              <a class="btn" href="projects.html">See full project list</a>
-            </div>
-          </div>
-        </section>
-
-        <section class="chapter chapter-bartender" id="bartender" aria-labelledby="bartender-title">
-          <div class="chapter-inner reveal">
-            <p class="chapter-kicker">Hospitality</p>
-            <h2 id="bartender-title">Craft and service</h2>
-            <p class="chapter-lead">
-              Bartending sharpened consistency, communication, and calm execution under pressure.
-            </p>
-
-            <div class="recipe-grid" aria-label="Cocktail recipes">
-              <article class="recipe-card">
-                <h3>Oli's Feijoa Tom Collins</h3>
-                <p class="recipe-note">Feijoa-forward, bright citrus, NZ gin backbone.</p>
-                <details class="story-expand compact-expand">
-                  <summary>View recipe</summary>
-                  <div class="expand-body">
-                    <h4>Ingredients</h4>
-                    <ul class="recipe-ingredients">
-                      <li>NZ gin</li>
-                      <li>Feijoa puree or cordial</li>
-                      <li>Lemon juice</li>
-                      <li>Sugar syrup</li>
-                      <li>Soda water</li>
-                    </ul>
-                    <h4>Method</h4>
-                    <ol class="recipe-method">
-                      <li>Shake gin, feijoa, lemon, and syrup with ice.</li>
-                      <li>Strain into a tall glass over fresh ice.</li>
-                      <li>Top with soda and stir once.</li>
-                      <li>Garnish and serve.</li>
-                    </ol>
-                  </div>
-                </details>
-              </article>
-            </div>
-
-            <div class="chapter-cta">
-              <a class="btn" href="cocktails.html">See full cocktail page</a>
-            </div>
-          </div>
-        </section>
-
-        <section class="chapter chapter-contact" id="contact" aria-labelledby="contact-title">
-          <div class="chapter-inner reveal">
-            <p class="chapter-kicker">Contact</p>
-            <h2 id="contact-title">Let's connect.</h2>
-            <p class="chapter-lead">
-              Open to cybersecurity internship, graduate, and junior opportunities.
-            </p>
-
-            <details class="story-expand compact-expand">
-              <summary>Availability</summary>
-              <div class="expand-body">
-                <p>I can contribute across infrastructure, security, and client-facing communication.</p>
+            <button
+              type="button"
+              class="project-card project-expand"
+              aria-haspopup="dialog"
+              aria-controls="project-modal"
+              aria-label="Open project details for Self-hosted network homelab"
+              data-cursor="hover"
+            >
+              <span class="project-card-cta" aria-hidden="true"></span>
+              <div class="project-card-inner">
+                <span class="project-card-num">Project 02</span>
+                <h3>Self-Hosted Network Homelab</h3>
+                <p>
+                  Raspberry Pi infrastructure running DNS filtering, mesh VPN, password vault, and media services. Private by default, accessible from anywhere I trust.
+                </p>
+                <div class="project-card-tags">
+                  <span class="tag">Linux</span>
+                  <span class="tag">DNS</span>
+                  <span class="tag">VPN</span>
+                  <span class="tag">Docker</span>
+                </div>
               </div>
-            </details>
-
-            <div class="contact-actions">
-              <a class="btn btn-accent" href="https://www.linkedin.com/in/olivermedwin/" target="_blank" rel="noopener">LinkedIn</a>
-              <a class="btn" href="mailto:oli@medwin.nz">oli@medwin.nz</a>
-              <a class="btn" href="tel:+64225320776">022 532 0776</a>
-              <a class="btn" href="https://github.com/oli-medwin" target="_blank" rel="noopener">GitHub</a>
-            </div>
-
-            <footer class="site-footer story-footer">
-              <p class="footer-text">© <span class="js-year"></span> Oli Medwin. All rights reserved.</p>
-            </footer>
+              <div class="project-details" hidden>
+                <p>
+                  Self-managed network environment focused on privacy, reliability, and secure authentication. Real-world experience with the boring parts of operating infrastructure.
+                </p>
+                <h4>Highlights</h4>
+                <ul>
+                  <li>Pi-hole DNS filtering and Tailscale mesh VPN for secure remote access.</li>
+                  <li>Vaultwarden, Jellyfin, and Syncthing across a private VPN.</li>
+                  <li>NAS backups with user-based access control.</li>
+                  <li>Tech: Linux, Docker, DNS, WireGuard, role-based access.</li>
+                </ul>
+              </div>
+            </button>
           </div>
-        </section>
-      </main>
 
-      <div
-        class="modal-overlay"
-        id="project-overlay"
-        aria-hidden="true"
-        aria-label="Project details overlay"
-      >
-        <div
-          class="project-modal"
-          id="project-modal"
-          role="dialog"
-          aria-modal="true"
-          aria-labelledby="project-modal-title"
-        >
-          <div class="project-modal-inner">
-            <div class="project-modal-head">
-              <h2 id="project-modal-title">Project</h2>
-              <button type="button" class="btn" id="project-modal-close">Close</button>
-            </div>
-            <div class="project-modal-body" id="project-modal-body"></div>
+          <div class="projects-footer reveal">
+            <a href="projects.html" class="projects-link" data-cursor="hover">See the full project list</a>
+            <a href="cv.pdf" class="btn" data-cursor="hover">Download CV (PDF)</a>
           </div>
         </div>
+      </section>
+
+      <!-- =========================================================
+           Cocktail / hospitality
+           ========================================================= -->
+      <section class="section cocktail" id="cocktail" aria-labelledby="cocktail-title">
+        <div class="container">
+          <header class="section-head reveal">
+            <span class="section-num">03 — An aside</span>
+            <h2 class="section-title" id="cocktail-title">Service, <em>craft</em>, &amp; a feijoa.</h2>
+          </header>
+
+          <div class="cocktail-grid">
+            <div class="cocktail-intro reveal">
+              <h2>I think the bar taught me as much as the lab.</h2>
+              <p>
+                Bartending built the muscles security work asks for too &mdash; consistency, calm under pressure, and the discipline of doing a small thing well every single time. Plus, sometimes you just want a good drink. So here&rsquo;s mine.
+              </p>
+            </div>
+
+            <article class="recipe reveal">
+              <h3 class="recipe-name">Oli&rsquo;s Feijoa Tom Collins</h3>
+              <p class="recipe-note">
+                Feijoa-forward, bright citrus, and an NZ gin backbone. A late-summer drink that tastes like an Auckland backyard.
+              </p>
+
+              <div class="recipe-divider"><span>Pour</span></div>
+              <ul>
+                <li>45 ml NZ gin</li>
+                <li>30 ml feijoa puree (or cordial)</li>
+                <li>20 ml fresh lemon juice</li>
+                <li>15 ml sugar syrup (1:1)</li>
+                <li>Soda water, to top</li>
+              </ul>
+
+              <div class="recipe-divider"><span>Method</span></div>
+              <ol>
+                <li>Shake gin, feijoa, lemon, and syrup hard with ice.</li>
+                <li>Strain into a tall glass over fresh ice.</li>
+                <li>Top with soda and stir once, gently.</li>
+                <li>Garnish with a lemon wheel. Serve to someone you like.</li>
+              </ol>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- =========================================================
+           Contact
+           ========================================================= -->
+      <section class="section contact" id="contact" aria-labelledby="contact-title">
+        <div class="container">
+          <header class="section-head reveal">
+            <span class="section-num">04 — Contact</span>
+          </header>
+
+          <div class="reveal">
+            <p class="contact-lede">
+              Open to cybersecurity internship, graduate, and junior opportunities &mdash; especially anything touching auth, networking, or infrastructure. Auckland-based, but happy to talk to anyone.
+            </p>
+            <h2 class="contact-title" id="contact-title">Let&rsquo;s <em>build</em> something.</h2>
+          </div>
+
+          <ul class="contact-channels reveal-children">
+            <li class="contact-channel">
+              <a href="mailto:oli@medwin.nz" data-cursor="hover">
+                <span class="contact-channel-label">Email</span>
+                <span class="contact-channel-value">oli@medwin.nz</span>
+                <span class="contact-channel-arrow" aria-hidden="true"></span>
+              </a>
+            </li>
+            <li class="contact-channel">
+              <a href="tel:+64225320776" data-cursor="hover">
+                <span class="contact-channel-label">Phone</span>
+                <span class="contact-channel-value">022 532 0776</span>
+                <span class="contact-channel-arrow" aria-hidden="true"></span>
+              </a>
+            </li>
+            <li class="contact-channel">
+              <a href="https://www.linkedin.com/in/olivermedwin/" target="_blank" rel="noopener" data-cursor="hover">
+                <span class="contact-channel-label">LinkedIn</span>
+                <span class="contact-channel-value">linkedin.com/in/olivermedwin</span>
+                <span class="contact-channel-arrow" aria-hidden="true"></span>
+              </a>
+            </li>
+            <li class="contact-channel">
+              <a href="https://github.com/oli-medwin" target="_blank" rel="noopener" data-cursor="hover">
+                <span class="contact-channel-label">GitHub</span>
+                <span class="contact-channel-value">github.com/oli-medwin</span>
+                <span class="contact-channel-arrow" aria-hidden="true"></span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container site-footer-inner">
+        <span class="footer-mark">Oli Medwin<span class="dot" aria-hidden="true"></span></span>
+        <p class="footer-note">
+          Built quietly in Auckland. <span class="accent">Always learning.</span> &copy; <span class="js-year"></span>
+        </p>
+      </div>
+    </footer>
+
+    <div class="modal-overlay" id="project-overlay" aria-hidden="true" aria-label="Project details overlay">
+      <div
+        class="project-modal"
+        id="project-modal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="project-modal-title"
+      >
+        <div class="project-modal-head">
+          <h2 id="project-modal-title">Project</h2>
+          <button type="button" class="modal-close" id="project-modal-close" aria-label="Close project details">×</button>
+        </div>
+        <div class="project-modal-body" id="project-modal-body"></div>
       </div>
     </div>
-
-    <nav class="mobile-quick-nav" aria-label="Mobile quick navigation">
-      <a class="mobile-quick-link is-active" data-target="intro" href="#intro">Home</a>
-      <a class="mobile-quick-link" data-target="overview" href="#overview">Profile</a>
-      <a class="mobile-quick-link" data-target="builder" href="#builder">Projects</a>
-      <a class="mobile-quick-link" data-target="contact" href="#contact">Contact</a>
-    </nav>
-
-    <button class="back-to-top" id="back-to-top" type="button" aria-label="Back to top" aria-hidden="true">
-      Back to top
-    </button>
 
     <script defer src="script.js"></script>
   </body>

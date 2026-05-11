@@ -8,45 +8,63 @@
       content="Oli Medwin projects — cybersecurity, networking, and practical homelab infrastructure work."
     />
 
+    <meta name="theme-color" content="#1a1714" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Outfit:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
 
     <link rel="stylesheet" href="style.css" />
     <title>Oli Medwin | Projects</title>
   </head>
   <body class="detail-page">
+    <div class="ambient" aria-hidden="true">
+      <div class="ambient-topo"></div>
+      <div class="ambient-grain"></div>
+      <div class="ambient-vignette"></div>
+    </div>
+
+    <div class="cursor-ring" id="cursor-ring" aria-hidden="true"></div>
+    <div class="cursor-dot" id="cursor-dot" aria-hidden="true"></div>
+
     <main class="detail-main">
       <section class="detail-shell" aria-labelledby="projects-title">
         <div class="detail-top">
-          <a class="back-link" href="index.html#builder">Back to homepage projects section</a>
-          <a class="back-link back-link-subtle" href="index.html">Home</a>
+          <a class="back-link" href="index.html#projects" data-cursor="hover">Back to projects</a>
+          <a class="back-link back-link-subtle" href="index.html" data-cursor="hover">Home</a>
         </div>
 
-        <p class="detail-kicker">Projects</p>
-        <h1 class="detail-title" id="projects-title">Homelab and infrastructure projects</h1>
+        <p class="detail-kicker">Selected work</p>
+        <h1 class="detail-title" id="projects-title">Homelab &amp; infrastructure projects</h1>
         <p class="detail-lead">
-          Selected practical work focused on secure access, resilient services, and maintainable operations.
-          Select a project card to open full details.
+          Practical work focused on secure access, resilient services, and infrastructure I actually run myself.
+          Tap a card for full details.
         </p>
 
-        <div class="project-grid detail-project-grid">
+        <div class="project-grid detail-section">
           <button
             type="button"
             class="project-card project-expand"
             aria-haspopup="dialog"
             aria-controls="project-modal"
-            aria-label="Open project details for Arena House Points Tracking Web Application"
+            aria-label="Open project details for Arena House Points Tracking"
+            data-cursor="hover"
           >
-            <h3>Arena House Points Tracking Web Application</h3>
-            <p>
-              Full-stack web application for primary and high schools to track house points with secure account roles.
-            </p>
-            <div class="tag-row" aria-label="Project tags">
-              <span class="tag">JavaScript/TypeScript</span>
-              <span class="tag">OAuth</span>
-              <span class="tag">RBAC</span>
-              <span class="tag">Vercel</span>
+            <span class="project-card-cta" aria-hidden="true"></span>
+            <div class="project-card-inner">
+              <span class="project-card-num">Project 01</span>
+              <h3>Arena House Points Tracking</h3>
+              <p>
+                Full-stack production web app for primary and high schools to manage house competition points, with Google OAuth and role-based access for staff, students, and admins.
+              </p>
+              <div class="project-card-tags">
+                <span class="tag">JS / TS</span>
+                <span class="tag">OAuth</span>
+                <span class="tag">RBAC</span>
+                <span class="tag">Vercel</span>
+              </div>
             </div>
             <div class="project-details" hidden>
               <p>
@@ -55,8 +73,8 @@
               <h4>Highlights</h4>
               <ul>
                 <li>Built and deployed a full-stack web app to production hosting.</li>
-                <li>Implemented Google OAuth authentication and role-based access control (RBAC).</li>
-                <li>Live deployment: arenapointstracking.vercel.app.</li>
+                <li>Implemented Google OAuth authentication and role-based access control.</li>
+                <li>Live: <a href="https://arenapointstracking.vercel.app/" target="_blank" rel="noopener">arenapointstracking.vercel.app</a></li>
               </ul>
             </div>
           </button>
@@ -66,27 +84,32 @@
             class="project-card project-expand"
             aria-haspopup="dialog"
             aria-controls="project-modal"
-            aria-label="Open project details for Self Hosted Network Home Lab"
+            aria-label="Open project details for Self-hosted network homelab"
+            data-cursor="hover"
           >
-            <h3>Self Hosted Network Home Lab</h3>
-            <p>
-              Raspberry Pi home lab for secure service hosting, private access, and practical infrastructure operations.
-            </p>
-            <div class="tag-row" aria-label="Project tags">
-              <span class="tag">DNS</span>
-              <span class="tag">VPN</span>
-              <span class="tag">Linux</span>
-              <span class="tag">Docker</span>
+            <span class="project-card-cta" aria-hidden="true"></span>
+            <div class="project-card-inner">
+              <span class="project-card-num">Project 02</span>
+              <h3>Self-Hosted Network Homelab</h3>
+              <p>
+                Raspberry Pi infrastructure running DNS filtering, mesh VPN, password vault, and media services. Private by default, accessible from anywhere I trust.
+              </p>
+              <div class="project-card-tags">
+                <span class="tag">Linux</span>
+                <span class="tag">DNS</span>
+                <span class="tag">VPN</span>
+                <span class="tag">Docker</span>
+              </div>
             </div>
             <div class="project-details" hidden>
               <p>
-                Self-managed home lab emphasizing secure authentication, private networking, and reliable services.
+                Self-managed environment focused on privacy, reliability, and secure authentication. Real experience with the boring parts of operating infrastructure.
               </p>
               <h4>Highlights</h4>
               <ul>
-                <li>Configured Pi-hole DNS filtering and Tailscale VPN for secure remote access.</li>
-                <li>Configured and maintained Vaultwarden, Jellyfin, and Syncthing across a private VPN network.</li>
-                <li>Maintained NAS backups and user-based access control for secure data and media services.</li>
+                <li>Pi-hole DNS filtering and Tailscale VPN for secure remote access.</li>
+                <li>Vaultwarden, Jellyfin, and Syncthing across a private VPN.</li>
+                <li>NAS backups with user-based access control.</li>
               </ul>
             </div>
           </button>
@@ -97,16 +120,20 @@
             aria-haspopup="dialog"
             aria-controls="project-modal"
             aria-label="Open project details for Tailscale mesh network"
+            data-cursor="hover"
           >
-            <h3>Tailscale mesh network</h3>
-            <p>
-              WireGuard-based private access across devices and services, with simple policies and
-              strong defaults.
-            </p>
-            <div class="tag-row" aria-label="Project tags">
-              <span class="tag">WireGuard</span>
-              <span class="tag">Access Control</span>
-              <span class="tag">Security</span>
+            <span class="project-card-cta" aria-hidden="true"></span>
+            <div class="project-card-inner">
+              <span class="project-card-num">Project 03</span>
+              <h3>Tailscale mesh network</h3>
+              <p>
+                WireGuard-based private access across devices and services, with simple policies and strong defaults. Reduces public exposure while keeping trusted access frictionless.
+              </p>
+              <div class="project-card-tags">
+                <span class="tag">WireGuard</span>
+                <span class="tag">ACL</span>
+                <span class="tag">Security</span>
+              </div>
             </div>
             <div class="project-details" hidden>
               <p>
@@ -122,27 +149,25 @@
           </button>
         </div>
 
-        <p class="detail-note">More projects are in progress and documented as they mature.</p>
+        <p class="detail-note">More projects are in progress &mdash; documented as they mature.</p>
 
         <div class="page-actions">
-          <a class="btn" href="index.html#builder">Back to homepage section</a>
-          <a class="btn btn-accent" href="index.html#contact">Contact</a>
+          <a class="btn" href="index.html#projects" data-cursor="hover">Back to homepage</a>
+          <a class="btn btn-accent" href="index.html#contact" data-cursor="hover">Get in touch</a>
         </div>
       </section>
     </main>
 
-    <footer class="site-footer detail-footer">
-      <div class="container">
-        <p class="footer-text">© <span class="js-year"></span> Oli Medwin. All rights reserved.</p>
+    <footer class="site-footer">
+      <div class="container site-footer-inner">
+        <span class="footer-mark">Oli Medwin<span class="dot" aria-hidden="true"></span></span>
+        <p class="footer-note">
+          Built quietly in Auckland. <span class="accent">Always learning.</span> &copy; <span class="js-year"></span>
+        </p>
       </div>
     </footer>
 
-    <div
-      class="modal-overlay"
-      id="project-overlay"
-      aria-hidden="true"
-      aria-label="Project details overlay"
-    >
+    <div class="modal-overlay" id="project-overlay" aria-hidden="true" aria-label="Project details overlay">
       <div
         class="project-modal"
         id="project-modal"
@@ -150,13 +175,11 @@
         aria-modal="true"
         aria-labelledby="project-modal-title"
       >
-        <div class="project-modal-inner">
-          <div class="project-modal-head">
-            <h2 id="project-modal-title">Project</h2>
-            <button type="button" class="btn" id="project-modal-close">Close</button>
-          </div>
-          <div class="project-modal-body" id="project-modal-body"></div>
+        <div class="project-modal-head">
+          <h2 id="project-modal-title">Project</h2>
+          <button type="button" class="modal-close" id="project-modal-close" aria-label="Close project details">×</button>
         </div>
+        <div class="project-modal-body" id="project-modal-body"></div>
       </div>
     </div>
 

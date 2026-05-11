@@ -8,23 +8,36 @@
       content="Oli Medwin CV — education, experience, and technical focus."
     />
 
+    <meta name="theme-color" content="#1a1714" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Outfit:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
 
     <link rel="stylesheet" href="style.css" />
     <title>Oli Medwin | CV</title>
   </head>
   <body class="detail-page">
+    <div class="ambient" aria-hidden="true">
+      <div class="ambient-topo"></div>
+      <div class="ambient-grain"></div>
+      <div class="ambient-vignette"></div>
+    </div>
+
+    <div class="cursor-ring" id="cursor-ring" aria-hidden="true"></div>
+    <div class="cursor-dot" id="cursor-dot" aria-hidden="true"></div>
+
     <main class="detail-main">
       <section class="detail-shell" aria-labelledby="cv-title">
         <div class="detail-top">
-          <a class="back-link" href="index.html#overview">Back to homepage overview section</a>
-          <a class="back-link back-link-subtle" href="index.html">Home</a>
+          <a class="back-link" href="index.html#about" data-cursor="hover">Back to about</a>
+          <a class="back-link back-link-subtle" href="index.html" data-cursor="hover">Home</a>
         </div>
 
-        <p class="detail-kicker">CV</p>
-        <h1 class="detail-title" id="cv-title">Curriculum vitae</h1>
+        <p class="detail-kicker">Curriculum vitae</p>
+        <h1 class="detail-title" id="cv-title">The full picture.</h1>
         <p class="detail-lead">Penultimate-year AUT student majoring in cybersecurity and networks, seeking cybersecurity internship opportunities.</p>
 
         <article class="cv-paper detail-cv-paper">
@@ -149,16 +162,19 @@
         </article>
 
         <div class="page-actions">
-          <a class="btn btn-accent" href="cv.pdf">Download PDF</a>
-          <a class="btn" href="https://www.linkedin.com/in/olivermedwin/" target="_blank" rel="noopener">Open LinkedIn</a>
-          <a class="btn" href="index.html#overview">Back to homepage section</a>
+          <a class="btn btn-accent" href="cv.pdf" data-cursor="hover">Download PDF</a>
+          <a class="btn" href="https://www.linkedin.com/in/olivermedwin/" target="_blank" rel="noopener" data-cursor="hover">Open LinkedIn</a>
+          <a class="btn" href="index.html#about" data-cursor="hover">Back to homepage</a>
         </div>
       </section>
     </main>
 
-    <footer class="site-footer detail-footer">
-      <div class="container">
-        <p class="footer-text">© <span class="js-year"></span> Oli Medwin. All rights reserved.</p>
+    <footer class="site-footer">
+      <div class="container site-footer-inner">
+        <span class="footer-mark">Oli Medwin<span class="dot" aria-hidden="true"></span></span>
+        <p class="footer-note">
+          Built quietly in Auckland. <span class="accent">Always learning.</span> &copy; <span class="js-year"></span>
+        </p>
       </div>
     </footer>
 
