@@ -1,27 +1,6 @@
 (() => {
   const prefersReducedMotion =
     window.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches ?? false;
-  const isCoarsePointer =
-    window.matchMedia?.("(hover: none), (pointer: coarse)")?.matches ?? false;
-
-  /* ---------------------------------------------------------
-     Page load veil
-     --------------------------------------------------------- */
-  const lift = () => {
-    requestAnimationFrame(() => {
-      document.body.classList.add("is-loaded");
-      const veil = document.getElementById("page-veil");
-      if (veil) {
-        setTimeout(() => veil.classList.add("is-gone"), prefersReducedMotion ? 0 : 480);
-      }
-    });
-  };
-
-  if (document.readyState === "complete") {
-    lift();
-  } else {
-    window.addEventListener("load", lift, { once: true });
-  }
 
   document.addEventListener("DOMContentLoaded", () => {
     /* -------------------------------------------------------
@@ -32,105 +11,31 @@
     });
 
     /* -------------------------------------------------------
-       Hero title — staggered character reveal
+       Hero prompt — type a single word once, then settle
+       (reduced-motion / no-JS: full text is already in the DOM)
        ------------------------------------------------------- */
-    const splitTitle = (el) => {
-      if (!el || prefersReducedMotion) return;
-      const walker = document.createTreeWalker(el, NodeFilter.SHOW_TEXT);
-      const textNodes = [];
-      let node;
-      while ((node = walker.nextNode())) textNodes.push(node);
-
-      let charIndex = 0;
-      textNodes.forEach((textNode) => {
-        const text = textNode.nodeValue;
-        if (!text || !text.trim()) return;
-
-        const frag = document.createDocumentFragment();
-        const words = text.split(/(\s+)/);
-
-        words.forEach((word) => {
-          if (!word) return;
-          if (/^\s+$/.test(word)) {
-            frag.appendChild(document.createTextNode(word));
-            return;
-          }
-          const wordSpan = document.createElement("span");
-          wordSpan.className = "word";
-          [...word].forEach((ch) => {
-            const charSpan = document.createElement("span");
-            charSpan.className = "char";
-            charSpan.textContent = ch;
-            charSpan.style.animationDelay = `${charIndex * 38 + 220}ms`;
-            wordSpan.appendChild(charSpan);
-            charIndex += 1;
-          });
-          frag.appendChild(wordSpan);
-        });
-
-        textNode.parentNode.replaceChild(frag, textNode);
-      });
-    };
-
-    splitTitle(document.querySelector("[data-stagger]"));
-
-    /* -------------------------------------------------------
-       Custom cursor
-       ------------------------------------------------------- */
-    const dot = document.getElementById("cursor-dot");
-    const ring = document.getElementById("cursor-ring");
-
-    if (dot && ring && !isCoarsePointer) {
-      let mouseX = window.innerWidth / 2;
-      let mouseY = window.innerHeight / 2;
-      let ringX = mouseX;
-      let ringY = mouseY;
-      let raf;
-
-      const tick = () => {
-        ringX += (mouseX - ringX) * 0.18;
-        ringY += (mouseY - ringY) * 0.18;
-        dot.style.transform = `translate(${mouseX}px, ${mouseY}px) translate(-50%, -50%)`;
-        ring.style.transform = `translate(${ringX}px, ${ringY}px) translate(-50%, -50%)`;
-        raf = requestAnimationFrame(tick);
+    const typed = document.querySelector(".hero-typed");
+    if (typed && !prefersReducedMotion) {
+      const full = (typed.textContent || "").trim();
+      const prompt = typed.closest(".hero-prompt");
+      typed.textContent = "";
+      prompt?.classList.add("is-typing");
+      let i = 0;
+      const step = () => {
+        i += 1;
+        typed.textContent = full.slice(0, i);
+        if (i < full.length) {
+          setTimeout(step, 85);
+        } else {
+          // let the caret blink briefly, then hand off to the title caret
+          setTimeout(() => prompt?.classList.remove("is-typing"), 1400);
+        }
       };
-      tick();
-
-      document.addEventListener("mousemove", (e) => {
-        mouseX = e.clientX;
-        mouseY = e.clientY;
-      });
-
-      document.addEventListener("mouseleave", () => {
-        dot.classList.add("is-hidden");
-        ring.classList.add("is-hidden");
-      });
-
-      document.addEventListener("mouseenter", () => {
-        dot.classList.remove("is-hidden");
-        ring.classList.remove("is-hidden");
-      });
-
-      const hoverSelector = 'a, button, [data-cursor="hover"], summary, .project-card';
-      document.addEventListener("mouseover", (e) => {
-        if (e.target.closest?.(hoverSelector)) {
-          dot.classList.add("is-hover");
-          ring.classList.add("is-hover");
-        }
-      });
-      document.addEventListener("mouseout", (e) => {
-        if (e.target.closest?.(hoverSelector)) {
-          dot.classList.remove("is-hover");
-          ring.classList.remove("is-hover");
-        }
-      });
-    } else if (dot && ring) {
-      dot.style.display = "none";
-      ring.style.display = "none";
+      setTimeout(step, 480);
     }
 
     /* -------------------------------------------------------
-       Nav: stuck-on-scroll + active section + mobile toggle
+       Nav: stuck-on-scroll + mobile toggle
        ------------------------------------------------------- */
     const nav = document.getElementById("nav");
     const navToggle = document.getElementById("nav-toggle");
@@ -292,6 +197,5 @@
         if (e.key === "Escape" && overlay.classList.contains("is-open")) closeProject();
       });
     }
-
   });
 })();

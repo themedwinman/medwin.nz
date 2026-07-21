@@ -5,14 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
-      content="Oli Medwin CV — education, experience, and technical focus."
+      content="Oli Medwin CV — education, projects, experience, and technical focus in cybersecurity and networks."
     />
 
-    <meta name="theme-color" content="#1a1714" />
+    <meta name="theme-color" content="#232019" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Outfit:wght@300;400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap"
       rel="stylesheet"
     />
 
@@ -20,48 +20,45 @@
     <title>Oli Medwin | CV</title>
   </head>
   <body class="detail-page">
-    <div class="ambient" aria-hidden="true">
-      <div class="ambient-topo"></div>
-      <div class="ambient-grain"></div>
-      <div class="ambient-vignette"></div>
-    </div>
-
-    <div class="cursor-ring" id="cursor-ring" aria-hidden="true"></div>
-    <div class="cursor-dot" id="cursor-dot" aria-hidden="true"></div>
-
     <main class="detail-main">
       <section class="detail-shell" aria-labelledby="cv-title">
         <div class="detail-top">
-          <a class="back-link" href="index.html#about" data-cursor="hover">Back to about</a>
-          <a class="back-link back-link-subtle" href="index.html" data-cursor="hover">Home</a>
+          <a class="back-link" href="index.html#about">Back to about</a>
+          <a class="back-link back-link-subtle" href="index.html">Home</a>
         </div>
 
         <p class="detail-kicker">Curriculum vitae</p>
-        <h1 class="detail-title" id="cv-title">The full picture.</h1>
-        <p class="detail-lead">Penultimate-year AUT student majoring in cybersecurity and networks, seeking cybersecurity internship opportunities.</p>
+        <h1 class="detail-title" id="cv-title">The full <em>picture</em>.</h1>
+        <p class="detail-lead">Penultimate-year AUT student majoring in cybersecurity and networks, looking for a cybersecurity internship.</p>
 
         <article class="cv-paper detail-cv-paper">
           <div class="cv-header">
             <h2 class="cv-title">Oli Medwin</h2>
-            <p class="cv-subtitle">Auckland, NZ | medwin.nz | 022 532 0776 | oli@medwin.nz</p>
+            <p class="cv-subtitle">Auckland, NZ · medwin.nz · 022 532 0776 · oli@medwin.nz</p>
             <p class="cv-subtitle">
-              LinkedIn: <a href="https://www.linkedin.com/in/olivermedwin/" target="_blank" rel="noopener">www.linkedin.com/in/olivermedwin</a>
+              LinkedIn: <a href="https://www.linkedin.com/in/olivermedwin/" target="_blank" rel="noopener">linkedin.com/in/olivermedwin</a>
+              · GitHub: <a href="https://github.com/themedwinman" target="_blank" rel="noopener">github.com/themedwinman</a>
             </p>
           </div>
 
           <section class="cv-section" aria-labelledby="profile-title">
-            <h3 id="profile-title">Personal profile</h3>
+            <h3 id="profile-title">Profile</h3>
             <p>
-              Penultimate-year Computer Science student majoring in Cybersecurity and Networks at Auckland University of Technology, with practical experience in secure system deployment, authentication, and self-hosted infrastructure. Experienced in troubleshooting, network configuration, and security-based projects. Seeking a cybersecurity internship to apply these skills in a practical environment.
+              Penultimate-year Computer and Information Science student majoring in Cybersecurity and
+              Networks at AUT. Hands-on experience with authentication, secure system deployment, and
+              self-hosted infrastructure, plus practical troubleshooting and network configuration.
+              Looking for a cybersecurity internship to apply these skills in a real environment.
             </p>
           </section>
 
           <section class="cv-section" aria-labelledby="edu-title">
             <h3 id="edu-title">Education</h3>
             <div class="cv-row">
-              <div class="cv-item-title">Bachelor of Computer and Information Science - Major in Cybersecurity - AUT</div>
-              <div class="cv-item-subtitle">Expected Graduation: 2027 | GPA: 7.37/9.0</div>
-              <div class="cv-item-subtitle">Relevant coursework: Network Security, Systems Administration, Internet and Networking</div>
+              <div class="cv-item-title">Bachelor of Computer and Information Science — Major in Cybersecurity &amp; Networks — AUT</div>
+              <div class="cv-item-subtitle">Expected graduation 2027 · GPA 7.37 / 9.0</div>
+              <ul class="cv-list">
+                <li>Relevant coursework: Network Security, Systems Administration, Internet and Networking.</li>
+              </ul>
             </div>
           </section>
 
@@ -69,26 +66,27 @@
             <h3 id="projects-title">Projects</h3>
 
             <div class="cv-row">
-              <div class="cv-item-title">Arena House Points Tracking Web Application</div>
+              <div class="cv-item-title">Arena House Points Tracking — full-stack web app</div>
               <div class="cv-item-subtitle">
-                <a href="https://arenapointstracking.vercel.app/" target="_blank" rel="noopener">https://arenapointstracking.vercel.app/</a>
+                <a href="https://arenapointstracking.vercel.app/" target="_blank" rel="noopener">arenapointstracking.vercel.app</a>
               </div>
               <ul class="cv-list">
-                <li>Built a full-stack web app for tracking house points within primary and high schools.</li>
-                <li>Implemented Google OAuth authentication and role-based access control (RBAC).</li>
-                <li>Deployed the application to production using cloud hosting.</li>
-                <li>Technologies: JavaScript/TypeScript, OAuth, Vercel.</li>
+                <li>Built a full-stack web app for tracking house points in primary and high schools.</li>
+                <li>Implemented Google OAuth sign-in and role-based access control (staff / student / admin).</li>
+                <li>Deployed to production on cloud hosting.</li>
+                <li>Technologies: JavaScript / TypeScript, OAuth, Vercel.</li>
+                <!-- TODO: add real scale/outcome (schools or users) if you have it. -->
               </ul>
             </div>
 
             <div class="cv-row">
-              <div class="cv-item-title">Self Hosted Network Home Lab</div>
+              <div class="cv-item-title">Self-hosted network homelab</div>
               <ul class="cv-list">
-                <li>Managed a Raspberry Pi home lab running multiple network services.</li>
-                <li>Configured Pi-hole DNS filtering and Tailscale VPN for secure remote access.</li>
-                <li>Configured and maintained Vaultwarden, Jellyfin, and Syncthing across a private VPN network.</li>
-                <li>Maintained secure NAS storage with user-based access control for backups and media.</li>
-                <li>Technologies: Linux, VPN, DNS, Docker, user-based access control.</li>
+                <li>Run a Raspberry Pi homelab hosting multiple network services.</li>
+                <li>Configured Pi-hole DNS filtering and a Tailscale / WireGuard mesh VPN for secure remote access.</li>
+                <li>Set up and maintain Vaultwarden, Jellyfin, and Syncthing in Docker across a private VPN.</li>
+                <li>Maintain secure NAS storage with user-based access control for backups and media.</li>
+                <li>Technologies: Linux, Docker, DNS, WireGuard, role-based access control.</li>
               </ul>
             </div>
           </section>
@@ -96,22 +94,21 @@
           <section class="cv-section" aria-labelledby="exp-title">
             <h3 id="exp-title">Work experience</h3>
             <div class="cv-row">
-              <div class="cv-item-title">Technical Support Engineer (Intern) - Netcare</div>
-              <div class="cv-item-subtitle">Auckland | November 2023 - January 2024</div>
+              <div class="cv-item-title">Technical Support Engineer (Intern) — Netcare</div>
+              <div class="cv-item-subtitle">Auckland · November 2023 – January 2024</div>
               <ul class="cv-list">
-                <li>Provided remote technical support for clients across software, hardware, and network issues.</li>
-                <li>Applied troubleshooting and problem-solving skills in real time.</li>
-                <li>Communicated technical solutions clearly to non-technical clients.</li>
+                <li>Provided remote technical support across software, hardware, and network issues.</li>
+                <li>Applied troubleshooting and problem-solving under time pressure.</li>
+                <li>Explained technical solutions clearly to non-technical clients.</li>
               </ul>
             </div>
 
             <div class="cv-row">
-              <div class="cv-item-title">Bartender - Shed 16</div>
-              <div class="cv-item-subtitle">Auckland | 2024 - Present</div>
+              <div class="cv-item-title">Hospitality — Shed 16</div>
+              <div class="cv-item-subtitle">Auckland · 2024 – present</div>
               <ul class="cv-list">
-                <li>Deliver high-quality customer service in a fast-paced hospitality environment.</li>
-                <li>Maintain cleanliness, organization, and stock management behind the bar.</li>
-                <li>Create cocktails and serve a range of wines and beers.</li>
+                <li>Deliver reliable customer service in a fast-paced environment.</li>
+                <li>Handle stock, cash, and organisation while working as part of a team.</li>
               </ul>
             </div>
           </section>
@@ -119,52 +116,53 @@
           <section class="cv-section" aria-labelledby="skills-title">
             <h3 id="skills-title">Skills</h3>
             <div class="cv-row">
-              <div class="cv-item-title">Cybersecurity and networking</div>
+              <div class="cv-item-title">Security &amp; networking</div>
               <ul class="cv-list">
                 <li>Authentication and role-based access control (RBAC)</li>
-                <li>VPN setup and configuration</li>
+                <li>VPN setup and configuration (WireGuard / Tailscale)</li>
                 <li>DNS and TCP/IP fundamentals</li>
                 <li>Network monitoring</li>
               </ul>
             </div>
 
             <div class="cv-row">
-              <div class="cv-item-title">Technical tools</div>
+              <div class="cv-item-title">Systems &amp; tools</div>
               <ul class="cv-list">
-                <li>Linux and cloud/web hosting</li>
-                <li>System automation</li>
-                <li>Full-stack development</li>
+                <li>Linux administration</li>
+                <li>Docker and self-hosting</li>
+                <li>Cloud / web hosting</li>
+                <li>Full-stack development (JavaScript / TypeScript)</li>
               </ul>
             </div>
 
             <div class="cv-row">
-              <div class="cv-item-title">Soft skills</div>
+              <div class="cv-item-title">Working on</div>
               <ul class="cv-list">
-                <li>Problem solving and troubleshooting</li>
-                <li>Communication and teamwork</li>
-                <li>Leadership from managing an events team in high school</li>
+                <li>Network security and systems administration coursework</li>
+                <!-- TODO: list certifications here as you earn them. -->
               </ul>
             </div>
           </section>
 
           <section class="cv-section" aria-labelledby="achievements-title">
-            <h3 id="achievements-title">Achievements and leadership</h3>
+            <h3 id="achievements-title">Achievements &amp; leadership</h3>
             <ul class="cv-list">
-              <li>Completed 800+ hours of community service through St John Youth and Student Volunteer Army programs.</li>
-              <li>Awarded the Grand Prior's Award through St John Youth for excellence, leadership, and community service.</li>
+              <li>800+ hours of community service through St John Youth and the Student Volunteer Army.</li>
+              <li>Awarded the Grand Prior&rsquo;s Award (St John Youth) for leadership and community service.</li>
+              <li>Led an events team in high school.</li>
             </ul>
           </section>
 
           <section class="cv-section" aria-labelledby="referees-title">
             <h3 id="referees-title">Referees</h3>
-            <p>Available upon request.</p>
+            <p>Available on request.</p>
           </section>
         </article>
 
         <div class="page-actions">
-          <a class="btn btn-accent" href="cv.pdf" data-cursor="hover">Download PDF</a>
-          <a class="btn" href="https://www.linkedin.com/in/olivermedwin/" target="_blank" rel="noopener" data-cursor="hover">Open LinkedIn</a>
-          <a class="btn" href="index.html#about" data-cursor="hover">Back to homepage</a>
+          <a class="btn btn-accent" href="cv.pdf">Download PDF</a>
+          <a class="btn" href="https://www.linkedin.com/in/olivermedwin/" target="_blank" rel="noopener">Open LinkedIn</a>
+          <a class="btn" href="index.html#about">Back to homepage</a>
         </div>
       </section>
     </main>
@@ -173,7 +171,7 @@
       <div class="container site-footer-inner">
         <span class="footer-mark">Oli Medwin<span class="dot" aria-hidden="true"></span></span>
         <p class="footer-note">
-          Built quietly in Auckland. <span class="accent">Always learning.</span> &copy; <span class="js-year"></span>
+          Built in Auckland. <span class="accent">Always learning.</span> &copy; <span class="js-year"></span>
         </p>
       </div>
     </footer>

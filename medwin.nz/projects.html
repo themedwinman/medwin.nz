@@ -5,14 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
-      content="Oli Medwin projects — cybersecurity, networking, and practical homelab infrastructure work."
+      content="Oli Medwin projects — cybersecurity, networking, and practical self-hosted infrastructure work."
     />
 
-    <meta name="theme-color" content="#1a1714" />
+    <meta name="theme-color" content="#232019" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Outfit:wght@300;400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap"
       rel="stylesheet"
     />
 
@@ -20,27 +20,18 @@
     <title>Oli Medwin | Projects</title>
   </head>
   <body class="detail-page">
-    <div class="ambient" aria-hidden="true">
-      <div class="ambient-topo"></div>
-      <div class="ambient-grain"></div>
-      <div class="ambient-vignette"></div>
-    </div>
-
-    <div class="cursor-ring" id="cursor-ring" aria-hidden="true"></div>
-    <div class="cursor-dot" id="cursor-dot" aria-hidden="true"></div>
-
     <main class="detail-main">
       <section class="detail-shell" aria-labelledby="projects-title">
         <div class="detail-top">
-          <a class="back-link" href="index.html#projects" data-cursor="hover">Back to projects</a>
-          <a class="back-link back-link-subtle" href="index.html" data-cursor="hover">Home</a>
+          <a class="back-link" href="index.html#projects">Back to projects</a>
+          <a class="back-link back-link-subtle" href="index.html">Home</a>
         </div>
 
         <p class="detail-kicker">Selected work</p>
-        <h1 class="detail-title" id="projects-title">Homelab &amp; infrastructure projects</h1>
+        <h1 class="detail-title" id="projects-title">Homelab &amp; <em>infrastructure</em> projects</h1>
         <p class="detail-lead">
-          Practical work focused on secure access, resilient services, and infrastructure I actually run myself.
-          Tap a card for full details.
+          Practical work focused on secure access, resilient services, and infrastructure I actually run
+          myself. Tap a card for full details.
         </p>
 
         <div class="project-grid detail-section">
@@ -50,14 +41,14 @@
             aria-haspopup="dialog"
             aria-controls="project-modal"
             aria-label="Open project details for Arena House Points Tracking"
-            data-cursor="hover"
           >
             <span class="project-card-cta" aria-hidden="true"></span>
             <div class="project-card-inner">
-              <span class="project-card-num">Project 01</span>
+              <span class="project-card-num">Project 01 · Full-stack</span>
               <h3>Arena House Points Tracking</h3>
               <p>
-                Full-stack production web app for primary and high schools to manage house competition points, with Google OAuth and role-based access for staff, students, and admins.
+                A production web app that lets primary and high schools run house-point competitions,
+                with Google sign-in and separate access for staff, students, and admins.
               </p>
               <div class="project-card-tags">
                 <span class="tag">JS / TS</span>
@@ -68,13 +59,16 @@
             </div>
             <div class="project-details" hidden>
               <p>
-                Production app designed for reliable school house-point workflows and clear role-based access.
+                A production app for running school house-point competitions end-to-end, with clear
+                role-based access for each type of user.
               </p>
               <h4>Highlights</h4>
               <ul>
-                <li>Built and deployed a full-stack web app to production hosting.</li>
-                <li>Implemented Google OAuth authentication and role-based access control.</li>
-                <li>Live: <a href="https://arenapointstracking.vercel.app/" target="_blank" rel="noopener">demo.arena.medwin.nz</a></li>
+                <li>Built and deployed a full-stack web app to production cloud hosting.</li>
+                <li>Google OAuth sign-in and role-based access control (staff / student / admin).</li>
+                <li>Stack: JavaScript / TypeScript, OAuth, Vercel.</li>
+                <li>Live: <a href="https://arenapointstracking.vercel.app/" target="_blank" rel="noopener">arenapointstracking.vercel.app</a></li>
+                <!-- TODO: add real scale/outcome (schools/users) and a repo link if public. -->
               </ul>
             </div>
           </button>
@@ -84,76 +78,60 @@
             class="project-card project-expand"
             aria-haspopup="dialog"
             aria-controls="project-modal"
-            aria-label="Open project details for Self-hosted network homelab"
-            data-cursor="hover"
+            aria-label="Open project details for self-hosted network homelab"
           >
             <span class="project-card-cta" aria-hidden="true"></span>
             <div class="project-card-inner">
-              <span class="project-card-num">Project 02</span>
+              <span class="project-card-num">Project 02 · Infrastructure</span>
               <h3>Self-Hosted Network Homelab</h3>
               <p>
-                Raspberry Pi infrastructure running DNS filtering, mesh VPN, password vault, and media services. Private by default, accessible from anywhere I trust.
+                Raspberry Pi infrastructure running DNS filtering, a mesh VPN, a password vault, and
+                media services. Private by default, reachable from anywhere I trust.
               </p>
               <div class="project-card-tags">
                 <span class="tag">Linux</span>
                 <span class="tag">DNS</span>
-                <span class="tag">VPN</span>
+                <span class="tag">WireGuard</span>
                 <span class="tag">Docker</span>
               </div>
             </div>
             <div class="project-details" hidden>
               <p>
-                Self-managed environment focused on privacy, reliability, and secure authentication. Real experience with the boring parts of operating infrastructure.
+                A self-managed environment built around privacy, reliability, and secure access — and
+                real experience with the unglamorous parts of operating infrastructure.
               </p>
               <h4>Highlights</h4>
               <ul>
-                <li>Pi-hole DNS filtering and Tailscale VPN for secure remote access.</li>
-                <li>Vaultwarden, Jellyfin, and Syncthing across a private VPN.</li>
+                <li>Pi-hole DNS filtering across the network.</li>
+                <li>Tailscale / WireGuard mesh VPN for secure remote access, with per-service access rules.</li>
+                <li>Vaultwarden, Jellyfin, and Syncthing running in Docker over the private VPN.</li>
                 <li>NAS backups with user-based access control.</li>
+                <li>Stack: Linux, Docker, DNS, WireGuard, role-based access.</li>
               </ul>
             </div>
           </button>
 
-          <button
-            type="button"
-            class="project-card project-expand"
-            aria-haspopup="dialog"
-            aria-controls="project-modal"
-            aria-label="Open project details for Tailscale mesh network"
-            data-cursor="hover"
-          >
-            <span class="project-card-cta" aria-hidden="true"></span>
+          <!-- Placeholder slot — add a genuinely different project here. -->
+          <div class="project-card is-placeholder" aria-label="More projects coming soon">
             <div class="project-card-inner">
-              <span class="project-card-num">Project 03</span>
-              <h3>Tailscale mesh network</h3>
+              <span class="project-card-num">Project 03 · Coming soon</span>
+              <h3>Something new</h3>
               <p>
-                WireGuard-based private access across devices and services, with simple policies and strong defaults. Reduces public exposure while keeping trusted access frictionless.
+                A slot for the next build. <!-- TODO: replace with a real project — ideally
+                something distinct from the homelab (a tool, a script, a write-up, a CTF, etc.). -->
               </p>
               <div class="project-card-tags">
-                <span class="tag">WireGuard</span>
-                <span class="tag">ACL</span>
-                <span class="tag">Security</span>
+                <span class="tag">TBD</span>
               </div>
             </div>
-            <div class="project-details" hidden>
-              <p>
-                Designed to reduce public exposure while keeping trusted access simple and reliable.
-              </p>
-              <h4>Focus areas</h4>
-              <ul>
-                <li>Straightforward device onboarding and naming.</li>
-                <li>Clear access rules per service.</li>
-                <li>Low-friction troubleshooting and operational clarity.</li>
-              </ul>
-            </div>
-          </button>
+          </div>
         </div>
 
-        <p class="detail-note">More projects are in progress &mdash; documented as they mature.</p>
+        <p class="detail-note">More projects are in progress — I&rsquo;ll document them here as they mature.</p>
 
         <div class="page-actions">
-          <a class="btn" href="index.html#projects" data-cursor="hover">Back to homepage</a>
-          <a class="btn btn-accent" href="index.html#contact" data-cursor="hover">Get in touch</a>
+          <a class="btn" href="index.html#projects">Back to homepage</a>
+          <a class="btn btn-accent" href="index.html#contact">Get in touch</a>
         </div>
       </section>
     </main>
@@ -162,7 +140,7 @@
       <div class="container site-footer-inner">
         <span class="footer-mark">Oli Medwin<span class="dot" aria-hidden="true"></span></span>
         <p class="footer-note">
-          Built quietly in Auckland. <span class="accent">Always learning.</span> &copy; <span class="js-year"></span>
+          Built in Auckland. <span class="accent">Always learning.</span> &copy; <span class="js-year"></span>
         </p>
       </div>
     </footer>
