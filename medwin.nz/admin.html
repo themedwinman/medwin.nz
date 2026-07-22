@@ -1,0 +1,579 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="theme-color" content="#232019" />
+    <title>Admin — medwin.nz</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+
+    <style>
+      .admin-wrap {
+        width: 100%;
+        max-width: 920px;
+        margin: 0 auto;
+        padding: clamp(1.5rem, 5vw, 3rem) var(--gutter) 5rem;
+      }
+      .admin-head {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: baseline;
+        justify-content: space-between;
+        gap: 0.8rem 1.2rem;
+        margin-bottom: 2.4rem;
+      }
+      .admin-head h1 {
+        font-size: clamp(1.5rem, 3vw, 2rem);
+        margin: 0;
+        letter-spacing: -0.01em;
+      }
+      .admin-kicker {
+        font-size: 0.78rem;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--accent);
+        margin: 0 0 0.4rem;
+      }
+      .admin-whoami {
+        display: flex;
+        align-items: center;
+        gap: 0.9rem;
+        font-size: 0.82rem;
+        color: var(--muted);
+      }
+
+      .admin-card {
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        background: var(--surface);
+        padding: clamp(1.3rem, 3vw, 2rem);
+      }
+      .admin-card + .admin-card { margin-top: 1.6rem; }
+      .admin-card h2 {
+        font-size: 1.05rem;
+        margin: 0 0 1.3rem;
+        letter-spacing: -0.01em;
+      }
+
+      .field { margin-bottom: 1.15rem; }
+      .field label {
+        display: block;
+        font-size: 0.78rem;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: var(--text-soft);
+        margin-bottom: 0.45rem;
+      }
+      .field .hint { text-transform: none; letter-spacing: 0; color: var(--muted); }
+      .field input[type="text"],
+      .field input[type="email"],
+      .field input[type="password"],
+      .field input[type="url"],
+      .field input[type="number"],
+      .field textarea {
+        width: 100%;
+        font-family: var(--mono);
+        font-size: 0.92rem;
+        color: var(--text);
+        background: var(--bg-deep);
+        border: 1px solid var(--line-strong);
+        border-radius: 8px;
+        padding: 0.7rem 0.8rem;
+        transition: border-color 200ms;
+      }
+      .field textarea { min-height: 8rem; resize: vertical; line-height: 1.55; }
+      .field input:focus,
+      .field textarea:focus { outline: none; border-color: var(--accent-line); }
+      .field input[type="file"] { font-size: 0.85rem; color: var(--text-soft); }
+
+      .field-row {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 0 1.2rem;
+      }
+      @media (min-width: 620px) {
+        .field-row { grid-template-columns: repeat(2, 1fr); }
+      }
+
+      .checks { display: flex; flex-wrap: wrap; gap: 1.4rem; margin-bottom: 1.15rem; }
+      .check {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: 0.9rem;
+        color: var(--text-soft);
+        cursor: pointer;
+      }
+      .check input { width: 1.05rem; height: 1.05rem; accent-color: var(--accent); }
+
+      .admin-actions { display: flex; flex-wrap: wrap; gap: 0.8rem; align-items: center; }
+
+      .btn-solid {
+        font-family: var(--mono);
+        font-size: 0.88rem;
+        font-weight: 500;
+        letter-spacing: 0.02em;
+        padding: 0.7rem 1.3rem;
+        border-radius: 8px;
+        border: 1px solid var(--accent);
+        background: var(--accent);
+        color: var(--bg-deep);
+        cursor: pointer;
+        transition: opacity 200ms, transform 200ms var(--ease-out);
+      }
+      .btn-solid:hover { opacity: 0.9; }
+      .btn-solid:disabled { opacity: 0.5; cursor: progress; }
+
+      .btn-ghost {
+        font-family: var(--mono);
+        font-size: 0.85rem;
+        padding: 0.6rem 1rem;
+        border-radius: 8px;
+        border: 1px solid var(--line-strong);
+        background: transparent;
+        color: var(--text-soft);
+        cursor: pointer;
+        transition: border-color 200ms, color 200ms;
+      }
+      .btn-ghost:hover { border-color: var(--accent-line); color: var(--text); }
+      .btn-danger:hover { border-color: #c98080; color: #e6a6a6; }
+
+      .msg { font-size: 0.85rem; margin: 0.6rem 0 0; min-height: 1.2em; }
+      .msg.error { color: #e6a6a6; }
+      .msg.ok { color: var(--accent); }
+
+      .proj-list { list-style: none; margin: 0; padding: 0; }
+      .proj-item {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 0.6rem 1rem;
+        padding: 0.95rem 0;
+        border-top: 1px solid var(--line);
+      }
+      .proj-item:first-child { border-top: 0; }
+      .proj-item .grow { flex: 1 1 12rem; min-width: 0; }
+      .proj-item .proj-title { font-weight: 500; color: var(--text); }
+      .proj-item .proj-meta {
+        font-size: 0.74rem;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        color: var(--muted);
+        margin-top: 0.2rem;
+      }
+      .badge {
+        display: inline-block;
+        font-size: 0.66rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        padding: 0.16rem 0.5rem;
+        border-radius: 5px;
+        border: 1px solid var(--line-strong);
+        color: var(--text-soft);
+        margin-left: 0.4rem;
+      }
+      .badge.on { border-color: var(--accent-line); color: var(--accent); }
+      .badge.off { border-color: var(--line-strong); color: var(--muted); }
+
+      .thumb {
+        width: 54px;
+        height: 40px;
+        object-fit: cover;
+        border-radius: 6px;
+        border: 1px solid var(--line);
+        flex: 0 0 auto;
+      }
+      .editing-flag {
+        display: none;
+        font-size: 0.78rem;
+        color: var(--accent);
+        margin-bottom: 1rem;
+      }
+      .is-editing .editing-flag { display: block; }
+      [hidden] { display: none !important; }
+      .back-link { font-size: 0.82rem; color: var(--muted); }
+      .back-link:hover { color: var(--accent); }
+    </style>
+  </head>
+
+  <body>
+    <main class="admin-wrap">
+      <!-- ============================ LOGIN ============================ -->
+      <section id="login-view" hidden>
+        <p class="admin-kicker">medwin.nz</p>
+        <div class="admin-head">
+          <h1>Admin sign in</h1>
+          <a class="back-link" href="index.html">← Back to site</a>
+        </div>
+        <div class="admin-card" style="max-width: 460px;">
+          <form id="login-form">
+            <div class="field">
+              <label for="login-email">Email</label>
+              <input id="login-email" type="email" autocomplete="username" required />
+            </div>
+            <div class="field">
+              <label for="login-password">Password</label>
+              <input id="login-password" type="password" autocomplete="current-password" required />
+            </div>
+            <div class="admin-actions">
+              <button type="submit" class="btn-solid" id="login-btn">Sign in</button>
+            </div>
+            <p class="msg" id="login-msg"></p>
+          </form>
+        </div>
+      </section>
+
+      <!-- ========================== DASHBOARD ========================= -->
+      <section id="dash-view" hidden>
+        <p class="admin-kicker">medwin.nz</p>
+        <div class="admin-head">
+          <h1>Projects</h1>
+          <div class="admin-whoami">
+            <a class="back-link" href="index.html">View site ↗</a>
+            <span id="whoami"></span>
+            <button type="button" class="btn-ghost" id="logout-btn">Log out</button>
+          </div>
+        </div>
+
+        <!-- Create / edit form -->
+        <div class="admin-card" id="form-card">
+          <h2 id="form-title">Add a project</h2>
+          <p class="editing-flag" id="editing-flag"></p>
+          <form id="project-form">
+            <input type="hidden" id="p-id" />
+
+            <div class="field">
+              <label for="p-title">Title <span class="hint">— required</span></label>
+              <input id="p-title" type="text" required />
+            </div>
+
+            <div class="field">
+              <label for="p-description">Card description <span class="hint">— the short blurb on the tile</span></label>
+              <textarea id="p-description" style="min-height: 5rem;"></textarea>
+            </div>
+
+            <div class="field">
+              <label for="p-body">Detail <span class="hint">— shown in the modal. HTML allowed (e.g. &lt;h4&gt;, &lt;ul&gt;&lt;li&gt;)</span></label>
+              <textarea id="p-body"></textarea>
+            </div>
+
+            <div class="field-row">
+              <div class="field">
+                <label for="p-category">Category <span class="hint">— e.g. Full-stack</span></label>
+                <input id="p-category" type="text" />
+              </div>
+              <div class="field">
+                <label for="p-link">Live link <span class="hint">— optional URL</span></label>
+                <input id="p-link" type="url" placeholder="https://…" />
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="p-tags">Tags <span class="hint">— comma separated, e.g. Linux, Docker, DNS</span></label>
+              <input id="p-tags" type="text" />
+            </div>
+
+            <div class="field-row">
+              <div class="field">
+                <label for="p-sort">Sort order <span class="hint">— lower shows first</span></label>
+                <input id="p-sort" type="number" step="1" value="0" />
+              </div>
+              <div class="field">
+                <label for="p-image">Photo <span class="hint">— optional, max 5 MB</span></label>
+                <input id="p-image" type="file" accept="image/*" />
+                <img id="p-image-current" class="thumb" alt="" hidden style="margin-top: 0.5rem;" />
+              </div>
+            </div>
+
+            <div class="checks">
+              <label class="check"><input type="checkbox" id="p-featured" /> Featured (show on homepage)</label>
+              <label class="check"><input type="checkbox" id="p-visible" checked /> Visible</label>
+            </div>
+
+            <div class="admin-actions">
+              <button type="submit" class="btn-solid" id="save-btn">Save project</button>
+              <button type="button" class="btn-ghost" id="cancel-edit" hidden>Cancel edit</button>
+            </div>
+            <p class="msg" id="form-msg"></p>
+          </form>
+        </div>
+
+        <!-- Existing projects -->
+        <div class="admin-card">
+          <h2>Existing projects</h2>
+          <ul class="proj-list" id="proj-list"></ul>
+          <p class="msg" id="list-msg"></p>
+        </div>
+      </section>
+    </main>
+
+    <script type="module">
+      import { supabase } from "./supabase.js";
+
+      const $ = (id) => document.getElementById(id);
+      const BUCKET = "project-images";
+
+      const loginView = $("login-view");
+      const dashView = $("dash-view");
+
+      const setMsg = (el, text, kind = "") => {
+        el.textContent = text || "";
+        el.className = "msg" + (kind ? " " + kind : "");
+      };
+
+      // ---- Session / view switching ------------------------------------
+      async function refreshView() {
+        const { data: { session } } = await supabase.auth.getSession();
+        if (session) {
+          loginView.hidden = true;
+          dashView.hidden = false;
+          $("whoami").textContent = session.user.email || "";
+          await loadProjects();
+        } else {
+          dashView.hidden = true;
+          loginView.hidden = false;
+        }
+      }
+
+      // ---- Login / logout ----------------------------------------------
+      $("login-form").addEventListener("submit", async (e) => {
+        e.preventDefault();
+        const btn = $("login-btn");
+        btn.disabled = true;
+        setMsg($("login-msg"), "Signing in…");
+        const { error } = await supabase.auth.signInWithPassword({
+          email: $("login-email").value.trim(),
+          password: $("login-password").value,
+        });
+        btn.disabled = false;
+        if (error) {
+          setMsg($("login-msg"), error.message, "error");
+          return;
+        }
+        setMsg($("login-msg"), "");
+        $("login-password").value = "";
+        // The SIGNED_IN auth event (below) switches the view.
+      });
+
+      $("logout-btn").addEventListener("click", async () => {
+        await supabase.auth.signOut();
+        // The SIGNED_OUT auth event (below) switches the view.
+      });
+
+      // ---- Load + render the project list ------------------------------
+      async function loadProjects() {
+        setMsg($("list-msg"), "Loading…");
+        const { data, error } = await supabase
+          .from("projects")
+          .select("*")
+          .order("featured", { ascending: false })
+          .order("sort_order", { ascending: true })
+          .order("created_at", { ascending: false });
+        if (error) {
+          setMsg($("list-msg"), error.message, "error");
+          return;
+        }
+        setMsg($("list-msg"), "");
+        const list = $("proj-list");
+        list.replaceChildren();
+        if (!data.length) {
+          setMsg($("list-msg"), "No projects yet — add one above.");
+          return;
+        }
+        for (const p of data) list.appendChild(renderRow(p));
+      }
+
+      function renderRow(p) {
+        const li = document.createElement("li");
+        li.className = "proj-item";
+
+        if (p.image_url) {
+          const img = document.createElement("img");
+          img.className = "thumb";
+          img.src = p.image_url;
+          img.alt = "";
+          li.appendChild(img);
+        }
+
+        const grow = document.createElement("div");
+        grow.className = "grow";
+        const title = document.createElement("div");
+        title.className = "proj-title";
+        title.textContent = p.title;
+        const feat = p.featured ? '<span class="badge on">Featured</span>' : "";
+        const vis = p.visible
+          ? '<span class="badge on">Visible</span>'
+          : '<span class="badge off">Hidden</span>';
+        title.insertAdjacentHTML("beforeend", feat + vis);
+        const meta = document.createElement("div");
+        meta.className = "proj-meta";
+        meta.textContent = `#${p.id} · sort ${p.sort_order}${p.category ? " · " + p.category : ""}`;
+        grow.append(title, meta);
+        li.appendChild(grow);
+
+        const editBtn = document.createElement("button");
+        editBtn.className = "btn-ghost";
+        editBtn.type = "button";
+        editBtn.textContent = "Edit";
+        editBtn.addEventListener("click", () => startEdit(p));
+
+        const delBtn = document.createElement("button");
+        delBtn.className = "btn-ghost btn-danger";
+        delBtn.type = "button";
+        delBtn.textContent = "Delete";
+        delBtn.addEventListener("click", () => removeProject(p));
+
+        li.append(editBtn, delBtn);
+        return li;
+      }
+
+      // ---- Edit / reset the form ---------------------------------------
+      function tagsToInput(tags) {
+        if (Array.isArray(tags)) return tags.join(", ");
+        if (typeof tags === "string") {
+          try { const p = JSON.parse(tags); if (Array.isArray(p)) return p.join(", "); } catch {}
+          return tags;
+        }
+        return "";
+      }
+
+      function startEdit(p) {
+        $("p-id").value = p.id;
+        $("p-title").value = p.title || "";
+        $("p-description").value = p.description || "";
+        $("p-body").value = p.body || "";
+        $("p-category").value = p.category || "";
+        $("p-link").value = p.link || "";
+        $("p-tags").value = tagsToInput(p.tags);
+        $("p-sort").value = p.sort_order ?? 0;
+        $("p-featured").checked = !!p.featured;
+        $("p-visible").checked = p.visible !== false;
+        $("p-image").value = "";
+        const cur = $("p-image-current");
+        if (p.image_url) { cur.src = p.image_url; cur.hidden = false; } else { cur.hidden = true; }
+
+        $("form-card").classList.add("is-editing");
+        $("form-title").textContent = "Edit project";
+        $("editing-flag").textContent = `Editing “${p.title}” (#${p.id}). Leave the photo empty to keep the current one.`;
+        $("cancel-edit").hidden = false;
+        setMsg($("form-msg"), "");
+        $("form-card").scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+
+      function resetForm() {
+        $("project-form").reset();
+        $("p-id").value = "";
+        $("p-visible").checked = true;
+        $("p-image-current").hidden = true;
+        $("form-card").classList.remove("is-editing");
+        $("form-title").textContent = "Add a project";
+        $("cancel-edit").hidden = true;
+      }
+
+      $("cancel-edit").addEventListener("click", () => {
+        resetForm();
+        setMsg($("form-msg"), "");
+      });
+
+      // ---- Save (create or update) -------------------------------------
+      async function uploadImage(file) {
+        const ext = (file.name.split(".").pop() || "img").toLowerCase().replace(/[^a-z0-9]/g, "");
+        const path = `${Date.now()}-${Math.random().toString(36).slice(2, 8)}.${ext}`;
+        const { error } = await supabase.storage
+          .from(BUCKET)
+          .upload(path, file, { cacheControl: "31536000", upsert: false });
+        if (error) throw error;
+        return supabase.storage.from(BUCKET).getPublicUrl(path).data.publicUrl;
+      }
+
+      $("project-form").addEventListener("submit", async (e) => {
+        e.preventDefault();
+        const btn = $("save-btn");
+        btn.disabled = true;
+        setMsg($("form-msg"), "Saving…");
+
+        try {
+          const id = $("p-id").value;
+          const file = $("p-image").files[0];
+
+          if (file && file.size > 5 * 1024 * 1024) {
+            throw new Error("Photo is larger than 5 MB.");
+          }
+
+          let image_url;
+          if (file) {
+            setMsg($("form-msg"), "Uploading photo…");
+            image_url = await uploadImage(file);
+          }
+
+          const tags = $("p-tags").value
+            .split(",")
+            .map((t) => t.trim())
+            .filter(Boolean);
+
+          const row = {
+            title: $("p-title").value.trim(),
+            description: $("p-description").value.trim() || null,
+            body: $("p-body").value.trim() || null,
+            category: $("p-category").value.trim() || null,
+            link: $("p-link").value.trim() || null,
+            tags,
+            sort_order: parseInt($("p-sort").value, 10) || 0,
+            featured: $("p-featured").checked,
+            visible: $("p-visible").checked,
+          };
+          if (image_url) row.image_url = image_url;
+
+          let error;
+          if (id) {
+            ({ error } = await supabase.from("projects").update(row).eq("id", id));
+          } else {
+            ({ error } = await supabase.from("projects").insert(row));
+          }
+          if (error) throw error;
+
+          setMsg($("form-msg"), id ? "Updated." : "Project added.", "ok");
+          resetForm();
+          await loadProjects();
+        } catch (err) {
+          setMsg($("form-msg"), err?.message || String(err), "error");
+        } finally {
+          btn.disabled = false;
+        }
+      });
+
+      // ---- Delete ------------------------------------------------------
+      async function removeProject(p) {
+        if (!confirm(`Delete “${p.title}”? This cannot be undone.`)) return;
+        const { error } = await supabase.from("projects").delete().eq("id", p.id);
+        if (error) {
+          setMsg($("list-msg"), error.message, "error");
+          return;
+        }
+        // Best-effort cleanup of the stored image (public URL → object path).
+        if (p.image_url) {
+          const marker = `/${BUCKET}/`;
+          const i = p.image_url.indexOf(marker);
+          if (i !== -1) {
+            supabase.storage.from(BUCKET).remove([p.image_url.slice(i + marker.length)]);
+          }
+        }
+        await loadProjects();
+      }
+
+      // React to sign in / sign out (here, in another tab, or on token expiry).
+      supabase.auth.onAuthStateChange((event) => {
+        if (event === "SIGNED_IN" || event === "SIGNED_OUT") refreshView();
+      });
+      refreshView();
+    </script>
+  </body>
+</html>

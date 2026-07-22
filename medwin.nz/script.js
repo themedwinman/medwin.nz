@@ -185,8 +185,10 @@
         if (lastFocusedEl?.focus) lastFocusedEl.focus();
       };
 
-      document.querySelectorAll(".project-card.project-expand").forEach((card) => {
-        card.addEventListener("click", () => openProject(card));
+      // Delegated so cards rendered later by projects-data.js also open the modal.
+      document.addEventListener("click", (e) => {
+        const card = e.target.closest?.(".project-card.project-expand");
+        if (card) openProject(card);
       });
 
       modalClose.addEventListener("click", closeProject);

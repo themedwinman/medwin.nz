@@ -870,6 +870,34 @@ a { color: inherit; text-decoration: none; }
 
 .project-card .project-details { display: none; }
 
+/* Optional project thumbnail — a bordered ~16:9 banner above the card body.
+   Cards without an image render exactly as before. */
+.project-card-media {
+  position: relative;
+  z-index: 1;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: var(--surface-2);
+  border-bottom: 1px solid var(--line);
+}
+.project-card-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 600ms var(--ease-out);
+}
+.project-card:hover .project-card-media img { transform: scale(1.04); }
+
+/* Image shown at the top of the project modal, when a project has one. */
+.project-modal-media {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  margin-bottom: 1.25rem;
+}
+
 /* Placeholder / coming-soon slot */
 .project-card.is-placeholder {
   cursor: default;
