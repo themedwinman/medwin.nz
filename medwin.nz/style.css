@@ -404,7 +404,7 @@ a { color: inherit; text-decoration: none; }
   margin: 2rem 0 0;
   display: flex;
   flex-wrap: wrap;
-  gap: 0 1.6rem;
+  row-gap: 0.4rem;
   list-style: none;
   padding: 0;
   color: var(--muted);
@@ -415,19 +415,17 @@ a { color: inherit; text-decoration: none; }
 .hero-meta li {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
   padding: 0.4rem 0;
 }
 
-.hero-meta li + li::before {
+.hero-meta li:not(:first-child)::before {
   content: "";
   width: 4px;
   height: 4px;
   background: var(--accent);
   border-radius: 999px;
-  margin-right: 1rem;
   display: inline-block;
-  transform: translateX(-1.6rem);
+  margin: 0 0.8rem;
 }
 
 .hero-aside {
@@ -545,8 +543,8 @@ a { color: inherit; text-decoration: none; }
   height: 7px;
   border-top: 1px solid currentColor;
   border-right: 1px solid currentColor;
-  transform: translateY(-50%) rotate(45deg);
-  transform-origin: right center;
+  transform: rotate(45deg);
+  transform-origin: right top;
 }
 
 .hero-cta:hover .arrow { width: 32px; }
@@ -950,8 +948,12 @@ a { color: inherit; text-decoration: none; }
   gap: 1.25rem;
 }
 
-@media (min-width: 760px) {
-  .skills-grid { grid-template-columns: repeat(3, 1fr); }
+@media (min-width: 640px) {
+  .skills-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (min-width: 1000px) {
+  .skills-grid { grid-template-columns: repeat(4, 1fr); }
 }
 
 .skill-group {

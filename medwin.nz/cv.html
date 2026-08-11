@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
-      content="Oli Medwin CV — education, projects, experience, and technical focus in cybersecurity and networks."
+      content="Oli Medwin CV — education, projects, experience, and technical focus in cybersecurity, networks, and AI development."
     />
 
     <meta name="theme-color" content="#232019" />
@@ -29,7 +29,7 @@
 
         <p class="detail-kicker">Curriculum vitae</p>
         <h1 class="detail-title" id="cv-title">The full <em>picture</em>.</h1>
-        <p class="detail-lead">Penultimate-year AUT student majoring in cybersecurity and networks, looking for a cybersecurity internship.</p>
+        <p class="detail-lead">Penultimate-year AUT student majoring in cybersecurity and networks, building AI/MCP tooling on the side, and looking for a cybersecurity or AI development internship.</p>
 
         <article class="cv-paper detail-cv-paper">
           <div class="cv-header">
@@ -46,8 +46,9 @@
             <p>
               Penultimate-year Computer and Information Science student majoring in Cybersecurity and
               Networks at AUT. Hands-on experience with authentication, secure system deployment, and
-              self-hosted infrastructure, plus practical troubleshooting and network configuration.
-              Looking for a cybersecurity internship to apply these skills in a real environment.
+              self-hosted infrastructure, increasingly extended into AI: building MCP servers and
+              agentic tooling that let AI models act securely on real infrastructure. Looking for a
+              cybersecurity or AI development internship to apply these skills in a real environment.
             </p>
           </section>
 
@@ -55,7 +56,7 @@
             <h3 id="edu-title">Education</h3>
             <div class="cv-row">
               <div class="cv-item-title">Bachelor of Computer and Information Science — Major in Cybersecurity &amp; Networks — AUT</div>
-              <div class="cv-item-subtitle">Expected graduation 2027 · GPA 7.37 / 9.0</div>
+              <div class="cv-item-subtitle">Expected graduation 2027 · GPA 7.41 / 9.0</div>
               <ul class="cv-list">
                 <li>Relevant coursework: Network Security, Systems Administration, Internet and Networking.</li>
               </ul>
@@ -64,6 +65,16 @@
 
           <section class="cv-section" aria-labelledby="projects-title">
             <h3 id="projects-title">Projects</h3>
+
+            <div class="cv-row">
+              <div class="cv-item-title">Almanac — self-hosted memory MCP server</div>
+              <ul class="cv-list">
+                <li>Built a long-term memory MCP server that gives AI models (Claude, ChatGPT) persistent, wikilinked knowledge about me, my projects, and my preferences.</li>
+                <li>Designed a security model around it: passkey authentication, with enrolment locked behind a panel reachable only over a Tailscale VPN.</li>
+                <li>Runs a daily linting agent that folds raw observations into structured, cross-linked pages.</li>
+                <li>Technologies: Deno, TypeScript, SQLite (FTS5), MCP SDK, OAuth 2.1.</li>
+              </ul>
+            </div>
 
             <div class="cv-row">
               <div class="cv-item-title">Arena House Points Tracking — full-stack web app</div>
@@ -87,6 +98,14 @@
                 <li>Set up and maintain Vaultwarden, Jellyfin, and Syncthing in Docker across a private VPN.</li>
                 <li>Maintain secure NAS storage with user-based access control for backups and media.</li>
                 <li>Technologies: Linux, Docker, DNS, WireGuard, role-based access control.</li>
+              </ul>
+            </div>
+
+            <div class="cv-row">
+              <div class="cv-item-title">Currently building — Forge &amp; Atrium</div>
+              <ul class="cv-list">
+                <li>Forge: a deployment manager and dashboard exposed over MCP, letting AI tooling provision and redeploy my own infrastructure under a scoped policy. Design complete, build in progress.</li>
+                <li>Atrium: an aggregator dashboard pulling live status from my other services into one view. Design complete, build in progress.</li>
               </ul>
             </div>
           </section>
@@ -126,6 +145,16 @@
             </div>
 
             <div class="cv-row">
+              <div class="cv-item-title">AI &amp; automation</div>
+              <ul class="cv-list">
+                <li>Model Context Protocol (MCP) servers</li>
+                <li>Agentic development workflows</li>
+                <li>LLM integration and tool use</li>
+                <li>Workflow automation (n8n)</li>
+              </ul>
+            </div>
+
+            <div class="cv-row">
               <div class="cv-item-title">Systems &amp; tools</div>
               <ul class="cv-list">
                 <li>Linux administration</li>
@@ -139,7 +168,6 @@
               <div class="cv-item-title">Working on</div>
               <ul class="cv-list">
                 <li>Network security and systems administration coursework</li>
-                <!-- TODO: list certifications here as you earn them. -->
               </ul>
             </div>
           </section>

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
-      content="Oli Medwin projects — cybersecurity, networking, and practical self-hosted infrastructure work."
+      content="Oli Medwin projects — cybersecurity, networking, self-hosted infrastructure, and AI/MCP development work."
     />
 
     <meta name="theme-color" content="#232019" />
@@ -28,13 +28,51 @@
         </div>
 
         <p class="detail-kicker">Selected work</p>
-        <h1 class="detail-title" id="projects-title">Homelab &amp; <em>infrastructure</em> projects</h1>
+        <h1 class="detail-title" id="projects-title">Infrastructure, security &amp; <em>AI</em> projects</h1>
         <p class="detail-lead">
-          Practical work focused on secure access, resilient services, and infrastructure I actually run
-          myself. Tap a card for full details.
+          Practical work focused on secure access, resilient services, and increasingly AI/MCP tooling I
+          actually run myself. Tap a card for full details.
         </p>
 
         <div class="project-grid detail-section" data-projects-grid="all">
+          <button
+            type="button"
+            class="project-card project-expand"
+            aria-haspopup="dialog"
+            aria-controls="project-modal"
+            aria-label="Open project details for Almanac"
+          >
+            <span class="project-card-cta" aria-hidden="true"></span>
+            <div class="project-card-inner">
+              <span class="project-card-num">Project 01 · MCP Server</span>
+              <h3>Almanac</h3>
+              <p>
+                A self-hosted long-term memory MCP server that gives AI models persistent, wikilinked
+                memory about me, my projects, and my preferences — secured with passkey authentication.
+              </p>
+              <div class="project-card-tags">
+                <span class="tag">MCP</span>
+                <span class="tag">Server</span>
+                <span class="tag">Memory</span>
+              </div>
+            </div>
+            <div class="project-details" hidden>
+              <p>
+                Almanac is a long-term persistent memory MCP server for use with LLMs like Claude and
+                ChatGPT. Every fact, project, person, or preference I mention gets recorded as a raw
+                observation, then folded daily by a separate linting agent into prose dossier pages
+                connected into a linked knowledge graph.
+              </p>
+              <h4>Highlights</h4>
+              <ul>
+                <li>Self-hosted MCP server exposing a personal knowledge base to AI assistants.</li>
+                <li>Daily linting agent folds raw observations into linked, structured pages.</li>
+                <li>Secured with passkey authentication; enrolment is locked behind a panel reachable only over Tailscale, open for a ten-minute window at a time.</li>
+                <li>Stack: Deno, TypeScript, SQLite (FTS5), MCP SDK, OAuth 2.1 for public clients.</li>
+              </ul>
+            </div>
+          </button>
+
           <button
             type="button"
             class="project-card project-expand"
@@ -44,7 +82,7 @@
           >
             <span class="project-card-cta" aria-hidden="true"></span>
             <div class="project-card-inner">
-              <span class="project-card-num">Project 01 · Full-stack</span>
+              <span class="project-card-num">Project 02 · Full-stack</span>
               <h3>Arena House Points Tracking</h3>
               <p>
                 A production web app that lets primary and high schools run house-point competitions,
@@ -82,7 +120,7 @@
           >
             <span class="project-card-cta" aria-hidden="true"></span>
             <div class="project-card-inner">
-              <span class="project-card-num">Project 02 · Infrastructure</span>
+              <span class="project-card-num">Project 03 · Infrastructure</span>
               <h3>Self-Hosted Network Homelab</h3>
               <p>
                 Raspberry Pi infrastructure running DNS filtering, a mesh VPN, a password vault, and
@@ -111,20 +149,81 @@
             </div>
           </button>
 
-          <!-- Placeholder slot — add a genuinely different project here. -->
-          <div class="project-card is-placeholder" aria-label="More projects coming soon">
+          <button
+            type="button"
+            class="project-card project-expand"
+            aria-haspopup="dialog"
+            aria-controls="project-modal"
+            aria-label="Open project details for Forge"
+          >
+            <span class="project-card-cta" aria-hidden="true"></span>
             <div class="project-card-inner">
-              <span class="project-card-num">Project 03 · Coming soon</span>
-              <h3>Something new</h3>
+              <span class="project-card-num">Project 04 · MCP Server</span>
+              <h3>Forge</h3>
               <p>
-                A slot for the next build. <!-- TODO: replace with a real project — ideally
-                something distinct from the homelab (a tool, a script, a write-up, a CTF, etc.). -->
+                A self-hosted deployment manager and dashboard, exposed over MCP, for provisioning and
+                redeploying my own infrastructure through AI tooling. Currently in design.
               </p>
               <div class="project-card-tags">
-                <span class="tag">TBD</span>
+                <span class="tag">MCP</span>
+                <span class="tag">Deployment</span>
+                <span class="tag">Infrastructure</span>
+                <span class="tag">In progress</span>
               </div>
             </div>
-          </div>
+            <div class="project-details" hidden>
+              <p>
+                Forge is a deployment manager and dashboard for my VPS, exposed over MCP so AI tooling can
+                provision, redeploy, and monitor services under a tightly scoped policy rather than having
+                free rein over the box.
+              </p>
+              <h4>Planned highlights</h4>
+              <ul>
+                <li>Split control plane: a sandboxed API container that can only queue intents, and a separate root-level service that validates and executes them against an explicit policy file.</li>
+                <li>Deploy, restart, and read logs for services over MCP — new public-facing services always require manual approval.</li>
+                <li>Full audit trail for every panel and MCP action; secrets are never exposed through either surface.</li>
+                <li>Status: architecture and phasing designed, build not yet started.</li>
+              </ul>
+            </div>
+          </button>
+
+          <button
+            type="button"
+            class="project-card project-expand"
+            aria-haspopup="dialog"
+            aria-controls="project-modal"
+            aria-label="Open project details for Atrium"
+          >
+            <span class="project-card-cta" aria-hidden="true"></span>
+            <div class="project-card-inner">
+              <span class="project-card-num">Project 05 · Dashboard</span>
+              <h3>Atrium</h3>
+              <p>
+                A central aggregator dashboard that sits above my other services as a single point of
+                call — status, links, and the things that actually need my attention. Currently in design.
+              </p>
+              <div class="project-card-tags">
+                <span class="tag">Dashboard</span>
+                <span class="tag">Status</span>
+                <span class="tag">Automation</span>
+                <span class="tag">In progress</span>
+              </div>
+            </div>
+            <div class="project-details" hidden>
+              <p>
+                Atrium is a planned aggregator dashboard that pulls status from my other services —
+                Almanac, Arbiter (Gmail triage), Astrolabe (calendar sync), and eventually Forge — into one
+                glanceable view, with quick links out to whatever needs attention.
+              </p>
+              <h4>Planned highlights</h4>
+              <ul>
+                <li>Every service exposes a small typed status endpoint that both the dashboard and MCP tools read from.</li>
+                <li>Client-fetched providers keep sensitive data (e.g. finances) off the server entirely — the browser reads it directly.</li>
+                <li>Editable quick-links drawer so I can add services without touching code.</li>
+                <li>Status: design and scaffolding complete, build not yet started.</li>
+              </ul>
+            </div>
+          </button>
         </div>
 
         <p class="detail-note">More projects are in progress — I&rsquo;ll document them here as they mature.</p>

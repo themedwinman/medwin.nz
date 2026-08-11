@@ -6,7 +6,7 @@
     <meta name="theme-color" content="#232019" />
     <meta
       name="description"
-      content="Oli Medwin — AUT cybersecurity and networks student in Auckland. Authentication, secure networking, Linux, and self-hosted infrastructure."
+      content="Oli Medwin — AUT cybersecurity and networks student in Auckland, building toward cybersecurity and AI development roles. Authentication, self-hosted infrastructure, and AI/MCP integration."
     />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -22,7 +22,7 @@
         .reveal, .reveal-children > * { opacity: 1 !important; transform: none !important; }
       </style>
     </noscript>
-    <title>Oli Medwin — Cybersecurity &amp; Networks</title>
+    <title>Oli Medwin — Cybersecurity &amp; AI</title>
   </head>
   <body>
     <header class="nav" id="nav">
@@ -64,7 +64,7 @@
               Kia ora, I&rsquo;m <span class="accent">Oli.</span><span class="caret" aria-hidden="true"></span>
             </h1>
             <p class="hero-tagline">
-              I'm a Cybersecurity and Networks Major in Auckland, Aotearoa New Zealand. Outside of coursework, I build and run self-hosted infrastructure, working to integrate agentic based devlopment and security into my projects. I am also a professional drummer with music on all major streaming platforms, and a volunteer with St John Youth and Student Volunteer Army.
+              A Cybersecurity and Networks major in Auckland, Aotearoa New Zealand, building and running self-hosted infrastructure &mdash; and increasingly, agentic AI development on top of it.
             </p>
             <ul class="hero-meta">
               <li>Auckland, NZ</li>
@@ -125,8 +125,8 @@
             <span>Homelab</span><span class="ticker-dot">·</span>
             <span>Network security</span><span class="ticker-dot">·</span>
             <span>Model Context Protocol</span><span class="ticker-dot">·</span>
-            <span>AI tooling</span><span class="ticker-dot">·</span>
-            <span>AI Integration & Development</span><span class="ticker-dot">·</span>
+            <span>Agentic AI</span><span class="ticker-dot">·</span>
+            <span>AI integration &amp; development</span><span class="ticker-dot">·</span>
           </span>
           <span class="ticker-group">
             <span>Authentication</span><span class="ticker-dot">·</span>
@@ -142,8 +142,8 @@
             <span>Homelab</span><span class="ticker-dot">·</span>
             <span>Network security</span><span class="ticker-dot">·</span>
             <span>Model Context Protocol</span><span class="ticker-dot">·</span>
-            <span>AI tooling</span><span class="ticker-dot">·</span>
-            <span>AI Integration & Development</span><span class="ticker-dot">·</span>
+            <span>Agentic AI</span><span class="ticker-dot">·</span>
+            <span>AI integration &amp; development</span><span class="ticker-dot">·</span>
           </span>
         </div>
       </div>
@@ -155,16 +155,19 @@
         <div class="container">
           <header class="section-head reveal">
             <span class="section-num">01 — About</span>
-            <h2 class="section-title" id="about-title">What I actually <em>do</em>.</h2>
+            <h2 class="section-title" id="about-title">What I actually <em>build</em>.</h2>
           </header>
 
           <div class="about-grid">
             <div class="about-intro reveal">
               <p>
-                Firstly, you might actually be the first person to read this... so congrats! Besides that really sad fact I spend a lot of time learning and integrating services I've created through Agentic Development into my homelab ecosystem. I run many of my services on a remote VPS based in Germany and have a Proxmox hypervisor running Virtual Machines that host a variety of services including a self-hosted media server, an open source backend for Bitwarden, and various self developed MCP servers that allow me to use AI as a coworker rather than a chatbot.
+                Firstly, you might actually be the first person to read this &mdash; so congrats! Besides that sad fact, I spend a lot of my time integrating AI into my homelab through agentic development: building MCP servers that let AI act as a coworker rather than a chatbot.
               </p>
               <p>
-                I care a lot about security and that has been a vital part of the development and deployment of my projects. For example, my Almanac — that being my self-hosted long term persistent memory server which is exposed via MCP and lets any authorised AI model access a knowledge base of me, my projects, and my preferences. The key word there being authorised. Because MCP needs to run over the public internet, I decided to implement a key-based authentication system with key enrolment being locked behind a panel accessible only over my Tailscale mesh VPN, removing the possibility of anyone gaining unauthorised access to this arguably sensitive data.
+                Most of it runs on a Hetzner VPS in Germany and a Proxmox hypervisor at home, hosting a self-hosted media server, an open-source Bitwarden-compatible vault, and a growing set of AI/MCP services I&rsquo;ve built myself.
+              </p>
+              <p>
+                Security is central to how I build and ship all of this. Almanac, my self-hosted long-term memory server, is a good example: it&rsquo;s exposed over MCP so any authorised AI model can access a knowledge base of me, my projects, and my preferences &mdash; the key word being <em>authorised</em>. Because MCP has to run over the public internet, I secured it with passkey authentication, with enrolment locked behind a panel reachable only over my Tailscale mesh VPN, open for a ten-minute window at a time.
               </p>
             </div>
 
@@ -177,14 +180,14 @@
 
               <article class="about-card">
                 <p class="about-card-label">Technical focus</p>
-                <h3>Auth · Networks · Linux · Infra</h3>
-                <p>OAuth and role-based access, Tailscale/WireGuard meshes, Pi-hole DNS, Docker services, and operating them long enough to learn how they break.</p>
+                <h3>Auth · Networks · Linux · AI/MCP</h3>
+                <p>OAuth and role-based access, Tailscale/WireGuard meshes, Pi-hole DNS, Docker services — and now MCP servers that let AI act on that infrastructure securely.</p>
               </article>
 
               <article class="about-card">
                 <p class="about-card-label">Currently learning</p>
-                <h3>Deeper into network security</h3>
-                <p>Working through network security and systems administration coursework, and expanding the homelab to try things hands-on.</p>
+                <h3>Network security &amp; agentic AI</h3>
+                <p>Working through network security and systems administration coursework, and expanding the homelab into agentic AI tooling — MCP servers, automation, and secure AI-to-infrastructure access.</p>
               </article>
 
               <article class="about-card">
@@ -246,8 +249,8 @@
           </header>
 
           <p class="section-lede reveal">
-            A few practical builds across security, networking, and infrastructure — production code,
-            real users, and the long tail of running something yourself. Tap a card for details.
+            A few practical builds across security, networking, infrastructure, and AI integration —
+            production code, real users, and the long tail of running something yourself. Tap a card for details.
           </p>
 
           <div class="project-grid project-grid--featured reveal-children" style="margin-top: 2.6rem;" data-projects-grid="featured">
@@ -256,11 +259,49 @@
               class="project-card project-card--featured project-expand"
               aria-haspopup="dialog"
               aria-controls="project-modal"
+              aria-label="Open project details for Almanac"
+            >
+              <span class="project-card-cta" aria-hidden="true"></span>
+              <div class="project-card-inner">
+                <span class="project-card-num">Project 01 · MCP Server</span>
+                <h3>Almanac</h3>
+                <p>
+                  A self-hosted long-term memory MCP server that gives AI models persistent, wikilinked
+                  memory about me, my projects, and my preferences — secured with passkey authentication.
+                </p>
+                <div class="project-card-tags">
+                  <span class="tag">MCP</span>
+                  <span class="tag">Server</span>
+                  <span class="tag">Memory</span>
+                </div>
+              </div>
+              <div class="project-details" hidden>
+                <p>
+                  Almanac is a long-term persistent memory MCP server for use with LLMs like Claude and
+                  ChatGPT. Every fact, project, person, or preference I mention gets recorded as a raw
+                  observation, then folded daily by a separate linting agent into prose dossier pages
+                  connected into a linked knowledge graph.
+                </p>
+                <h4>Highlights</h4>
+                <ul>
+                  <li>Self-hosted MCP server exposing a personal knowledge base to AI assistants.</li>
+                  <li>Daily linting agent folds raw observations into linked, structured pages.</li>
+                  <li>Secured with passkey authentication; enrolment is locked behind a panel reachable only over Tailscale, open for a ten-minute window at a time.</li>
+                  <li>Stack: Deno, TypeScript, SQLite (FTS5), MCP SDK, OAuth 2.1 for public clients.</li>
+                </ul>
+              </div>
+            </button>
+
+            <button
+              type="button"
+              class="project-card project-expand"
+              aria-haspopup="dialog"
+              aria-controls="project-modal"
               aria-label="Open project details for Arena House Points Tracking web app"
             >
               <span class="project-card-cta" aria-hidden="true"></span>
               <div class="project-card-inner">
-                <span class="project-card-num">Project 01 · Full-stack</span>
+                <span class="project-card-num">Project 02 · Full-stack</span>
                 <h3>Arena House Points Tracking</h3>
                 <p>
                   A production web app that lets primary and high schools run house-point competitions,
@@ -298,7 +339,7 @@
             >
               <span class="project-card-cta" aria-hidden="true"></span>
               <div class="project-card-inner">
-                <span class="project-card-num">Project 02 · Infrastructure</span>
+                <span class="project-card-num">Project 03 · Infrastructure</span>
                 <h3>Self-Hosted Network Homelab</h3>
                 <p>
                   Raspberry Pi infrastructure running DNS filtering, a mesh VPN, a password vault, and
@@ -350,7 +391,6 @@
             list what I&rsquo;ve actually used than pad it out.
           </p>
 
-          <!-- TODO: trim or adjust these to exactly what's true for you right now. -->
           <div class="skills-grid reveal-children" style="margin-top: 2.6rem;">
             <article class="skill-group">
               <h3>Security &amp; networking</h3>
@@ -359,6 +399,16 @@
                 <li>VPNs — WireGuard / Tailscale</li>
                 <li>DNS &amp; TCP/IP fundamentals</li>
                 <li>Network monitoring</li>
+              </ul>
+            </article>
+
+            <article class="skill-group">
+              <h3>AI &amp; automation</h3>
+              <ul class="skill-list">
+                <li>Model Context Protocol (MCP) servers</li>
+                <li>Agentic development workflows</li>
+                <li>LLM integration &amp; tool use</li>
+                <li>Workflow automation (n8n)</li>
               </ul>
             </article>
 
@@ -377,7 +427,6 @@
               <ul class="skill-list">
                 <li>Network security (coursework)</li>
                 <li>Systems administration</li>
-                <!-- TODO: add certifications here as you earn them. -->
                 <li>Certifications — in progress</li>
               </ul>
             </article>
@@ -396,8 +445,9 @@
 
           <div class="reveal">
             <p class="contact-lede">
-              Open to cybersecurity internship, graduate, and junior roles — especially anything touching
-              auth, networking, or infrastructure. Auckland-based, and happy to talk to anyone.
+              Open to cybersecurity and AI development internship, graduate, and junior roles — especially
+              anything touching auth, infrastructure, or AI integration. Auckland-based, and happy to talk
+              to anyone.
             </p>
             <h2 class="contact-title" id="contact-title">Let&rsquo;s <em>build</em> something.</h2>
           </div>
